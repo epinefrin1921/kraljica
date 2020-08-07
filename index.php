@@ -34,10 +34,10 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li><a href="#">NASLOVNA</a></li>
-            <li><a href="#">O NAMA</a></li>
-            <li><a href="#">SHOP</a></li>
-            <li><a href="#">KOPRICA</a></li>
-            <li><a href="#">BLOG</a></li>
+            <li><a href="o-nama.php">O NAMA</a></li>
+            <li><a href="shop.php">SHOP</a></li>
+            <li><a href="cart.php">KOPRICA</a></li>
+            <li><a href="blog.php">BLOG</a></li>
             <li><a href="kontakt.php">KONTAKT</a></li>
           </ul>
         </div>
@@ -234,44 +234,6 @@
     </div>
   </section>
 
-  <section class="blog">
-    <div class="container">
-      <div class="page-section">
-        <h2 class="page-section__title">Nas blog</h2>
-        <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
-        <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <div class="row gutters-40">
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img class="img-responsive" src="assets/images/blog-1.png" alt="">
-              <p class="blog__single__date">MAY 25 , 2017 </p>
-              <i class="material-icons">comment</i> 5
-              <a href="#"><h4 class="blog__single__title">HEADLINE LATEST WORLD NEWS</h4></a>
-              <p class="blog__single__paragraph">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Ut enim ad minim veniam <a href="#"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/blog-2.png" alt="">
-              <p class="blog__single__date">MAY 25 , 2017 </p>
-              <i class="material-icons">comment</i> 5
-              <a href="#"><h4 class="blog__single__title">HEADLINE LATEST WORLD NEWS</h4></a>
-              <p class="blog__single__paragraph">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Ut enim ad minim veniam <a href="#"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/blog-3.png" alt="">
-              <p class="blog__single__date">MAY 25 , 2017 </p>
-              <i class="material-icons">comment</i> 5
-              <a href="#"><h4 class="blog__single__title">HEADLINE LATEST WORLD NEWS</h4></a>
-              <p class="blog__single__paragraph">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Ut enim ad minim veniam <a href="#"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer class="footer footer--bg">
     <div class="container text-center">
