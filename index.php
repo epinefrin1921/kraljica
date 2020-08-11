@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,28 +20,12 @@
 <div id="content-wrapper">
   <header class="header header--bg">
     <div class="container">
-      <nav class="navbar">
 
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a style="font-size: 50px" class="navbar-brand" href="#">Medni dućan</a>
-        </div>
+        <?php
+        include ('assets/includes/header.php');
+        ?>
 
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li><a href="#">NASLOVNA</a></li>
-            <li><a href="o-nama.php">O NAMA</a></li>
-            <li><a href="shop.php">SHOP</a></li>
-            <li><a href="cart.php">KOPRICA</a></li>
-            <li><a href="blog.php">BLOG</a></li>
-            <li><a href="kontakt.php">KONTAKT</a></li>
-          </ul>
-        </div>
-      </nav>
+
       <div class="header__content text-center">
         <span class="header__content__block">Dobrodošli</span>
         <h1 class="header__content__title"></h1>
@@ -235,25 +219,10 @@
   </section>
 
 
-  <footer class="footer footer--bg">
-    <div class="container text-center">
-      <h1 class="footer__title">Medni ducan</h1>
-      <ul class="footer__contact-information">
-        <li><a href="tel:5555555555"><i class="material-icons">phone</i> +387603461615</a></li>
-        <li><a href="mailto:sshariar458@gmail.com"><i class="material-icons">email</i> info@s-kraljica.ba</a></li>
-        <li><a href="#"><i class="material-icons">location_on</i> Čaršijska, Visoko 71300</a></li>
-      </ul>
-    </div>
-    <hr style="border: 0;border-top: 1px solid #525B60;display:block;margin-top: 40px;">
-    <div class="container text-center">
-      <div class="social-icon">
-        <ul>
-          <li><a href="https://www.facebook.com/medniducanvisoko/"><i class="flaticon-facebook-letter-logo"></i></a></li>
-        </ul>
-      </div>
-      <p class="footer__paragraph">Developed by <a href="https://www.linkedin.com/in/nedim-ajdin/">Nedim Ajdin</a></p>
-    </div>
-  </footer>
+    <?php
+    include ('assets/includes/footer.php');
+    ?>
+
 </div>
   <script src="assets/jquery/jquery-3.2.1.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>

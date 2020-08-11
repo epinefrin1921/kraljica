@@ -1,4 +1,29 @@
 <?php
+session_start();
+include('assets/includes/db.php');
+
+
+$id=$_GET['id'];
+
+if($statement=$conn->prepare("select * from products where PID=?")){
+    $statement->bind_param('s',$id);
+
+    $statement->execute();
+
+    $statement->bind_result($ID, $Name, $Description, $Cat, $Price, $Quantity, $Image, $Date);
+
+    $statement->fetch();
+}
+else
+{
+    $error = $conn->errno . ' ' . $conn->error;
+    echo $error;
+}
+if(is_null($ID)){
+    header('Location: ../error.php');
+    exit();
+}
+
 
 ?>
 <!doctype html>
@@ -26,11 +51,14 @@
             ?>
 
             <div class="header__content text-center">
-                <span class="header__content__block">O nama</span>
+                <span class="header__content__block">Dobrodošli</span>
                 <h1 class="header__content__title"></h1>
                 <ul class="header__content__sub-title">
-                    <li>Zanima Vas nas rad?</li>
+                    <li>MED <span class="padding">&#45;</span></li>
+                    <li>SMJESE <span class="padding">&#45;</span></li>
+                    <li>MEDNI PROIZVODI</li>
                 </ul>
+                <a class="header__button" href="#">Kupite online</a>
             </div>
             <div class="social-icon pull-right">
                 <ul>
@@ -40,29 +68,36 @@
         </div>
     </header>
 
-    <section class="about">
-        <div class="container about__container--narrow">
-            <div class="page-section">
-                <h2 class="page-section__title">Ko smo mi?</h2>
-                <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
-                <p class="page-section__paragraph">Upoznajte nas i nas rad </p>
-                <div class="row gutters-80">
-                    <div class="col-md-4">
-                        <div class="about__image">
-                            <img src="assets/images/profilrr.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-8 about__content">
-                        <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
 
-                    </div>
+    <div class="wow fadeInUp proizvod" data-wow-delay="0.6s" style="margin-top: 40px; margin-bottom: 40px ">
+
+        <div>
+            <img src="images/<?= $Image ?>" class="img-responsive" alt="Food Menu">
+        </div>
+
+        <div class="opisproizvoda">
+            <div>
+                <h3 class="media-heading marka"><?= $Price ?>KM</h3>
+            </div>
+
+            <div class="cijena">
+                <div>
+                    <h3 class="media-heading"><?= $Name ?></h3>
+                </div>
+
+                <div>
+
+                    <?php if(isset($_SESSION['id'])): ?>
+                        <a href="user/deleteproducts.php?id=<?= $ID ?>">Izbriši</a>
+                        <a href="user/updateproducts.php?id=<?= $ID?>">Uredi</a>
+                        <a href="user/addquantity.php?id=<?= $ID ?>">Dodaj novu kolicinu</a>
+
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
-    </section>
 
+    </div>
 
 
     <section class="brand-logo brand-logo--bg">
@@ -74,6 +109,7 @@
             </div>
         </div>
     </section>
+
 
     <?php
     include ('assets/includes/footer.php');
