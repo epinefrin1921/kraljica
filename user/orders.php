@@ -56,7 +56,7 @@ $query3=mysqli_query($conn, 'select * from orders where Status="zavrseno" order 
     ?>
 
     <section id="menu" class="parallax-section">
-        <div class="container">
+        <div class="orders">
 
             <div class="row" style="text-align: center">
                 <h3>Narudžbe na čekanju:</h3>

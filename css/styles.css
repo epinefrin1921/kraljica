@@ -484,7 +484,14 @@ h3{
   background-color: rgba(249, 159, 91, 0.9);
   border-radius: 10px;
 }
-
+.orders p{
+ display: inline-block;
+  width: 15%;
+  border-bottom: 1px solid gray;
+}
+.sekcija{
+  width: 100%;
+}
 .portfolio__single-section:hover .portfolio__single-section__overlay{
   opacity: 1;
 }

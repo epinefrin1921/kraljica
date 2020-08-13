@@ -14,7 +14,11 @@
             <li><a href="/medni ducan/index.php">NASLOVNA</a></li>
             <li><a href="/medni ducan/o-nama.php">O NAMA</a></li>
             <li><a href="/medni ducan/shop.php">SHOP</a></li>
-            <li><a href="/medni ducan/cart.php">KOPRICA</a></li>
+            <li><a href="/medni ducan/cart.php">KOPRICA
+                    <?php if(isset($_SESSION['total'])): ?>
+                        (<?= $_SESSION['total']?>KM)
+                    <?php endif; ?>
+                </a></li>
             <li><a href="/medni ducan/blog.php">BLOG</a></li>
             <li><a href="/medni ducan/kontakt.php">KONTAKT</a></li>
         </ul>

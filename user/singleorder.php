@@ -30,6 +30,7 @@ $query2=mysqli_query($conn, 'select * from order_line where OrderID='.$order);
     <link rel="stylesheet" href="../assets/fonts/flat-icon/flaticon.css">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/cart.css">
     <link rel="icon" type="image/png" href="../assets/images/favicon%20(3).ico">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;700&family=Sacramento&display=swap" rel="stylesheet">
 </head>
@@ -59,7 +60,7 @@ $query2=mysqli_query($conn, 'select * from order_line where OrderID='.$order);
 
 
     <section id="menu" class="parallax-section">
-        <div class="container">
+        <div class="orders">
 
             <div class="row" style="text-align: center">
                 <h3>Informacije o klijentu:</h3>
@@ -107,9 +108,7 @@ $query2=mysqli_query($conn, 'select * from order_line where OrderID='.$order);
         </div>
     </section>
 
-
-    <!-- Menu section -->
-    <section id="menu" class="parallax-section" style="padding-top: 0">
+    <section id="menu" >
         <div class="container">
 
             <?php
@@ -122,38 +121,36 @@ $query2=mysqli_query($conn, 'select * from order_line where OrderID='.$order);
 
                     <h3 style="text-align: center; width: 100%; margin-bottom: 30px">Informacije o proizvodima:</h3>
 
-                    <div class="wow fadeInUp proizvod2" data-wow-delay="0s">
-
-                        <h3 class="media-heading" style="width: 20%">Naziv</h3>
-                        <h3 id="formkolicina" class="media-heading" style="width: 15%">Količina </h3>
-                        <h3 class="media-heading ">Cijena</h3>
+                    <div>
+                        <div class="naslov" style="color: black">
+                            <h3>Klijent</h3>
+                            <h3>Kolicina</h3>
+                            <h3>Cijena</h3>
+                        </div>
 
                     </div>
 
                     <?php while($row2=mysqli_fetch_assoc($query2)): ?>
-                        <div class="wow fadeInUp proizvod2" data-wow-delay="0s">
+                        <div class="naslov" style="color: black">
 
                             <?php
-                            $query3 = mysqli_query($conn, "select * from items where ID ='{$row2['ItemID']}'");
+                            $query3 = mysqli_query($conn, "select * from products where PID ='{$row2['ItemID']}'");
                             $row3= mysqli_fetch_assoc($query3);
                             $total_price=0;
                             $total_price+=$row2['Price']*$row2['Quantity'];
                             $total+=$total_price;
                             ?>
 
-                            <h3 class="media-heading" style="width: 20%"><?= $row3['Name'] ?></h3>
-                            <h3 id="formkolicina" class="media-heading"><?= $row2['Quantity'] ?></h3>
-                            <h3 class="media-heading "><?= $total_price ?>KM</h3>
+                            <h3><?= $row3['NAME'] ?></h3>
+                            <h3><?= $row2['Quantity'] ?></h3>
+                            <h3><?= $total_price ?>KM</h3>
 
 
                         </div>
                     <?php endwhile; ?>
 
-                    <div class="wow fadeInUp proizvod2" data-wow-delay="0s">
-
-                        <h3 class="media-heading" style="width: 20%">Ukupno: </h3>
-                        <h3 id="formkolicina" class="media-heading" style="width: 15%"> <?= $total ?> KM </h3>
-
+                    <div class="total" style="color: black">
+                        <h3>Ukupno:  <?= $total?> KM</h3>
                     </div>
 
                 </div>
