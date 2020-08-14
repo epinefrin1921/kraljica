@@ -15,6 +15,7 @@
             </ul>
         </div>
         <p class="footer__paragraph">Developed by <a href="https://www.linkedin.com/in/nedim-ajdin/">Nedim Ajdin</a></p>
+        <p><a href="/medni ducan/checkorder.php">Provjeri narudzbu</a></p>
         <?php if(!isset($_SESSION['id'])) :?>
             <p><a href="/medni ducan/user/login.php">Login</a></p>
         <?php endif; ?>

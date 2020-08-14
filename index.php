@@ -34,7 +34,7 @@ session_start();
           <li>SMJESE <span class="padding">&#45;</span></li>
           <li>MEDNI PROIZVODI</li>
         </ul>
-        <a class="header__button" href="#">Kupite online</a>
+        <a class="header__button" href="shop.php">Kupite online</a>
       </div>
       <div class="social-icon pull-right">
         <ul>
