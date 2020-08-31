@@ -43,7 +43,7 @@ $query2=mysqli_query($conn, 'select * from order_line where OrderID='.$order);
             include ('../assets/includes/header.php');
             ?>
             <div class="header__content text-center">
-                <span class="header__content__block">Pojedinacna narduzba</span>
+                <span class="header__content__block">Pojedinacna narudzba</span>
                 <h1 class="header__content__title"></h1>
             </div>
             <div class="social-icon pull-right">

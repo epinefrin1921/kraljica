@@ -69,35 +69,30 @@ if(is_null($ID)){
     </header>
 
 
-    <div class="wow fadeInUp proizvod" data-wow-delay="0.6s" style="margin-top: 40px; margin-bottom: 40px ">
-
-        <div>
-            <img src="images/<?= $Image ?>" class="img-responsive" alt="Food Menu">
-        </div>
-
-        <div class="opisproizvoda">
+        <div class="proizvod">
             <div>
-                <h3 class="media-heading marka"><?= $Price ?>KM</h3>
+                <img src="images/<?= $Image ?>" class="img-responsive" alt="Food Menu">
             </div>
-
-            <div class="cijena">
-                <div>
-                    <h3 class="media-heading"><?= $Name ?></h3>
-                </div>
-
-                <div>
-
-                    <?php if(isset($_SESSION['id'])): ?>
-                        <a href="user/deleteproducts.php?id=<?= $ID ?>">Izbriši</a>
-                        <a href="user/updateproducts.php?id=<?= $ID?>">Uredi</a>
-                        <a href="user/addquantity.php?id=<?= $ID ?>">Dodaj novu kolicinu</a>
-
-                    <?php endif; ?>
-                </div>
+            <div class="opis">
+                <h3 class="media-heading"><?= $Name ?></h3>
+                <p><?= $Description ?></p>
+                <p>Na stanju: <?= $Quantity?></p>
+                <h3 class="media-heading marka"><?= $Price ?>KM</h3>
+                <form action="order/cart.php?id=<?= $ID ?>" method="post" style="width: 100%">
+                    <input type="number" step="1" min="1" placeholder="Kolicina" id="quantity" name="quantity"  required max="<?= $row['QUANTITY']-$incart ?>" style="width: 40%">
+                    <input class="btn btn-success btn-sm" id="submit" type="submit" value="Dodaj">
+                </form>
             </div>
         </div>
-
+    <div>
+        <?php if(isset($_SESSION['id'])): ?>
+            <a href="user/deleteproducts.php?id=<?= $ID ?>">Izbriši</a>
+            <a href="user/updateproducts.php?id=<?= $ID?>">Uredi</a>
+            <a href="user/addquantity.php?id=<?= $ID ?>">Dodaj novu kolicinu</a>
+        <?php endif; ?>
     </div>
+
+
 
 
     <section class="brand-logo brand-logo--bg">

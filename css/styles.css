@@ -671,3 +671,17 @@ h3{
   color: #fff;
   font-family: Roboto-Light;
 }
+.proizvod{
+  display: flex;
+  width: 90%;
+  margin: 40px auto;
+}
+.proizvod > div{
+  width: 50%;
+}
+.proizvod img{
+  width: 100%;
+}
+.opis{
+  padding: 30px;
+}

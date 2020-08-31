@@ -19,7 +19,7 @@
                         (<?= $_SESSION['total']?>KM)
                     <?php endif; ?>
                 </a></li>
-            <li><a href="/medni ducan/blog.php">BLOG</a></li>
+<!--            <li><a href="/medni ducan/blog.php">BLOG</a></li>-->
             <li><a href="/medni ducan/kontakt.php">KONTAKT</a></li>
         </ul>
     </div>
