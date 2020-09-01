@@ -185,6 +185,9 @@ h3{
   .nav{
     float: right;
   }
+  #naslov{
+    padding-left: 0;
+  }
 }
 
 .Rectangle_ {

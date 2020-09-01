@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a style="font-size: 50px" class="navbar-brand" href="#">Medni dućan</a>
+        <a  id="naslov" style="font-size: 50px; padding-left: 0 ;" class="navbar-brand" href="#">Medni dućan</a>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
