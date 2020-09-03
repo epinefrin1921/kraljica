@@ -52,11 +52,18 @@ session_start();
                             <img src="assets/images/profilrr.jpg" alt="">
                         </div>
                     </div>
-                    <div class="col-md-8 about__content">
-                        <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                    <div class="col-md-8 about__content" style="padding-top: 0">
+                        <p class="about__description" style="text-align: justify">Medena kraljica nastala je sa željom da pokažem kakvo prirodno bogatstvo imamo u BiH. Na našem području nastaje jedan od najcjenjenijih i najkvalitetnijh medova u Evropi.
+                            Ljubav prema pčelama, njihovoj savršenoj organizaciji i preukusnim i zdravim proizvodima, bila je pokretač da završim obuku za pčelarku, te sam imala veliku sreću i zadovoljstvo da praktičan dio znanja dobijem od mog mentora rahmetli Osmana Hašimovića, zasigurno jednog od najboljih i najpriznatijih pčelara u srednjoj Bosni zadnjih nekoliko decenija. Osim znanja u radu sa pčelama, prenio mi je veliku ljubav prema pčelama ali i naučio da ih moram poštovati ako želim da dobijem kvalitetne proizvode.
+                            Naše proizvode nudimo u Mednom dućanu u Visokom, a imate mogućnost dostave na adresu online narudžbom.
 
+                            Moje pčelice putuju po našoj predivnoj zemlji, a sve u namjeri da obezbijedimo med sa različitih područja i različitih pašnjaka. Od Posavine do Hercegovine obilazimo udaljena i najljepša mjesta, odmaknuta od različitih zagađivača.
+
+                            Pored proizvoda koje možete vidjeti na stranici, trudim se pratiti novitete i praviti nove kombinacije i okuse, a sve sa željom da svojim kupcima ponudim najbolje od pčelinjih proizvoda, da poboljšamo zdravlje svih nas i da se što je moguće više okrenemo prirodnim proizvodima koji su dobri za naš imunitet.
+
+                            Dobro došli u moju Mednu priču za koju se nadam da će se i Vama dopasti i da ćemo skupa uživati u savršenim pčelinjim proizvodima, a trudit ću se da Vam u blogu pokažem i sva mjesta koja imam sreću da obilazim sa svojim vrijednim ljubimicama.
+                            <br><br>Sabina Krivdić
+                        </p>
                     </div>
                 </div>
             </div>

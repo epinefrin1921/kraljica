@@ -57,9 +57,9 @@ session_start();
               </div>
             </div>
             <div class="col-md-8 about__content">
-              <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-              <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-              <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+              <p class="about__description">Medena kraljica nastala je sa željom da pokažem kakvo prirodno bogatstvo imamo u BiH. Na našem području nastaje jedan od najcjenjenijih i najkvalitetnijh medova u Evropi. </p>
+              <p class="about__description">Moje pčelice putuju po našoj predivnoj zemlji, a sve u namjeri da obezbijedimo med sa različitih područja i različitih pašnjaka. Od Posavine do Hercegovine obilazimo udaljena i najljepša mjesta, odmaknuta od različitih zagađivača. </p>
+              <p class="about__description">Dobro došli u moju Mednu priču za koju se nadam da će se i Vama dopasti i da ćemo skupa uživati u savršenim pčelinjim proizvodima, a trudit ću se da Vam u blogu pokažem i sva mjesta koja imam sreću da obilazim sa svojim vrijednim ljubimicama. </p>
 
             </div>
           </div>
