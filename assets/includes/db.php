@@ -1,3 +1,5 @@
 <?php
 
-$conn =mysqli_connect('localhost', 'root', 'Test1234', 'medniducan');
+
+
+$conn =mysqli_connect('localhost', 'root', 'Test1234', 'kraljica');

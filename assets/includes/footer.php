@@ -18,6 +18,13 @@
     </div>
     <div class="credits">
         <p>Developed by Nedim Ajdin</p>
+        <?php if(!isset($_SESSION['id'])) :?>
+            <p><a href="/s-kraljica/user/login.php">Login</a></p>
+        <?php endif; ?>
+        <?php if(isset($_SESSION['id'])) :?>
+            <p><a href="/s-kraljica/user/logout.php">Logout</a></p>
+            <p><a href="/s-kraljica/user/myaccount.php">My account</a></p>
+        <?php endif; ?>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -18,7 +18,7 @@ include ('assets/includes/navbar.php');
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="assets/images/2%20(1).jpg" class="d-block w-100" alt="...">
+            <img src="assets/images/naslovna.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
             <img src="assets/images/naslovna.jpg" class="d-block w-100" alt="...">

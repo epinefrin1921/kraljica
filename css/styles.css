@@ -198,6 +198,9 @@ form input, form textarea, form button{
     width: 60%;
     margin: 10px auto;
 }
+#email{
+    width: 60%;
+}
 .onama2 img{
     width: 50%;
 }
@@ -262,4 +265,35 @@ form input, form textarea, form button{
     width: 50%;
     text-align: center;
 
+}
+.dobrodoslica{
+    padding: 60px;
+    text-align: center;
+}
+.forma{
+    padding: 50px;
+    text-align: center;
+}
+.narudzbeStranica{
+    padding: 60px;
+    text-align: center;
+}
+.informacijeNarudzba{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.narudzbeSve{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.izbrisani{
+    text-align: center;
+    padding: 50px;
+}
+.opisProizvoda{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
