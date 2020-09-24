@@ -1,27 +1,25 @@
-<footer class="footer footer--bg">
-    <div class="container text-center">
-        <h1 class="footer__title">Medni ducan</h1>
-        <ul class="footer__contact-information">
-            <li><a href="tel:5555555555"><i class="material-icons">phone</i> +387603461615</a></li>
-            <li><a href="mailto:sshariar458@gmail.com"><i class="material-icons">email</i> info@s-kraljica.ba</a></li>
-            <li><a href="#"><i class="material-icons">location_on</i> Čaršijska, Visoko 71300</a></li>
-        </ul>
-    </div>
-    <hr style="border: 0;border-top: 1px solid #525B60;display:block;margin-top: 40px;">
-    <div class="container text-center">
-        <div class="social-icon">
-            <ul>
-                <li><a href="https://www.facebook.com/medniducanvisoko/"><i class="flaticon-facebook-letter-logo"></i></a></li>
-            </ul>
+<footer>
+    <div class="opis">
+        <div class="mreze">
+            <p class="naziv">Drustvene mreze</p>
+            <p>
+                <i class="social fab fa-twitter fa-2x mreze"></i>
+                <i class="social fab fa-facebook-f fa-2x mreze"></i>
+                <i class="social fab fa-instagram fa-2x mreze"></i>
+                <i class="social fas fa-envelope fa-2x mreze"></i>
+            </p>
         </div>
-        <p class="footer__paragraph">Developed by <a href="https://www.linkedin.com/in/nedim-ajdin/">Nedim Ajdin</a></p>
-        <p><a href="/medni ducan/checkorder.php">Provjeri narudzbu</a></p>
-        <?php if(!isset($_SESSION['id'])) :?>
-            <p><a href="/medni ducan/user/login.php">Login</a></p>
-        <?php endif; ?>
-        <?php if(isset($_SESSION['id'])) :?>
-            <p><a href="/medni ducan/user/logout.php">Logout</a></p>
-            <p><a href="/medni ducan/user/myaccount.php">My account</a></p>
-        <?php endif; ?>
+        <div class="widget">
+            <h2>Kontaktirajte nas</h2>
+            <p>Telefon: +3844554545</p>
+            <p>Email: info@kraljica.ba</p>
+            <p>B.Mahala Visoko, BiH</p>
+        </div>
+    </div>
+    <div class="credits">
+        <p>Developed by Nedim Ajdin</p>
     </div>
 </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

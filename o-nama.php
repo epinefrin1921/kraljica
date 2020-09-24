@@ -1,93 +1,82 @@
 <?php
 session_start();
+include('assets/includes/db.php');
+
+$title = "O nama";
 ?>
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Medni ducan</title>
-    <meta name="keywords" content="med medni ducan smjese pcele">
-    <meta name="description" content="Medni ducan je radnja smjestena u Visokom. U ponudi imamo raznih vrsta meda, mednih smjesa i proizvoda.">
-
-    <link rel="stylesheet" href="assets/fonts/flat-icon/flaticon.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="assets/images/favicon%20(3).ico">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;700&family=Sacramento&display=swap" rel="stylesheet">
-</head>
+<?php
+include ('assets/includes/header.php');
+?>
 <body>
-<div id="content-wrapper">
-    <header class="header header--bg">
-        <div class="container">
 
-            <?php
-            include ('assets/includes/header.php');
-            ?>
+<?php
+include ('assets/includes/navbar.php');
+?>
 
-            <div class="header__content text-center">
-                <span class="header__content__block">O nama</span>
-                <h1 class="header__content__title"></h1>
-                <ul class="header__content__sub-title">
-                    <li>Zanima Vas nas rad?</li>
-                </ul>
-            </div>
-            <div class="social-icon pull-right">
-                <ul>
-                    <li><a href="https://www.facebook.com/medniducanvisoko/"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                </ul>
-            </div>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="assets/images/naslovna.jpg" class="d-block w-100" alt="...">
         </div>
-    </header>
-
-    <section class="about">
-        <div class="container about__container--narrow">
-            <div class="page-section">
-                <h2 class="page-section__title">Ko smo mi?</h2>
-                <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
-                <p class="page-section__paragraph">Upoznajte nas i nas rad </p>
-                <div class="row gutters-80">
-                    <div class="col-md-4">
-                        <div class="about__image">
-                            <img src="assets/images/profilrr.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-8 about__content" style="padding-top: 0">
-                        <p class="about__description" style="text-align: justify">Medena kraljica nastala je sa željom da pokažem kakvo prirodno bogatstvo imamo u BiH. Na našem području nastaje jedan od najcjenjenijih i najkvalitetnijh medova u Evropi.
-                            Ljubav prema pčelama, njihovoj savršenoj organizaciji i preukusnim i zdravim proizvodima, bila je pokretač da završim obuku za pčelarku, te sam imala veliku sreću i zadovoljstvo da praktičan dio znanja dobijem od mog mentora rahmetli Osmana Hašimovića, zasigurno jednog od najboljih i najpriznatijih pčelara u srednjoj Bosni zadnjih nekoliko decenija. Osim znanja u radu sa pčelama, prenio mi je veliku ljubav prema pčelama ali i naučio da ih moram poštovati ako želim da dobijem kvalitetne proizvode.
-                            Naše proizvode nudimo u Mednom dućanu u Visokom, a imate mogućnost dostave na adresu online narudžbom.
-
-                            Moje pčelice putuju po našoj predivnoj zemlji, a sve u namjeri da obezbijedimo med sa različitih područja i različitih pašnjaka. Od Posavine do Hercegovine obilazimo udaljena i najljepša mjesta, odmaknuta od različitih zagađivača.
-
-                            Pored proizvoda koje možete vidjeti na stranici, trudim se pratiti novitete i praviti nove kombinacije i okuse, a sve sa željom da svojim kupcima ponudim najbolje od pčelinjih proizvoda, da poboljšamo zdravlje svih nas i da se što je moguće više okrenemo prirodnim proizvodima koji su dobri za naš imunitet.
-
-                            Dobro došli u moju Mednu priču za koju se nadam da će se i Vama dopasti i da ćemo skupa uživati u savršenim pčelinjim proizvodima, a trudit ću se da Vam u blogu pokažem i sva mjesta koja imam sreću da obilazim sa svojim vrijednim ljubimicama.
-                            <br><br>Sabina Krivdić
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="carousel-item">
+            <img src="assets/images/naslovna.jpg" class="d-block w-100" alt="...">
         </div>
-    </section>
-
-
-
-    <section class="brand-logo brand-logo--bg">
-        <div class="container">
-            <div class="row">
-                <div class="brand-logo__wrapper">
-
-                </div>
-            </div>
+        <div class="carousel-item">
+            <img src="assets/images/naslovna.jpg" class="d-block w-100" alt="...">
         </div>
-    </section>
-
-    <?php
-    include ('assets/includes/footer.php');
-    ?>
-
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <div class="header">
+        <p>O nama</p>
+    </div>
 </div>
-<script src="assets/jquery/jquery-3.2.1.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+<div class="onama2">
+
+    <div class="podaci">
+        <img src="assets/images/SK_Prezentacija-2-11.png">
+        <div class="text">
+            <h1>Ko smo mi?</h1>
+            <p>Poljoprivredna proizvodnja “Malinica” sa svojom linijom proizvoda S-Kraljica rakije i likeri pružit će Vam ne samo hedonističko zadovoljstvo nego i omogućiti da pijete zdravo! U želji da Vam to i omogućimo, odlučili smo da umjesto industrijskog alkohola kao bazu za likere uzmemo domaću rakiju, te voće iz ekološkog uzgoja.
+              Obzirom da je naše područje bogato voćem, željeli smo da iskoristimo potencijal koji nas okružuje i dobijemo proizvode koji sigurno imaju bolji kvalitet nego proizvodi koje uvozimo, a istovremeno jačamo i domaću proizvodnju voća.
+               Naši proizvodi nastaju upotrebom isključivo domaćih sastojaka, te tradicionalnog procesa nastanka rakija i likera.</p>
+        </div>
+    </div>
+
+    <div class="podaci">
+        <div class="text">
+       <h1>Sta nudimo?</h1>
+            <p>Nudimo Vam i posebna pakovanja po Vašoj želji i potrebi kako bi Vaši pokloni bili originalni uz očaravajući okus!
+    Vjerujući da su naši proizvodi savršen poklon za Vama drage osobe, odlučili smo da upravo pakovanju posvetimo mnogo pažnje. Tako za svoje najdraže možete odabrati neke od naših unikatnih pakovanja, posebne kutije urađene dekupaž tehnikom koje nakon konzumiranja likera i rakija ostaju za uspomenu, a mogu se koristiti kao kutije za nakit ili neke druge vrijedne sitnice. Pakovanja zavise od Vaših želja kojima mi nastojimo ugoditi</p>
+        </div>
+        <img src="assets/images/SK_Prezentacija-2-11.png">
+    </div>
+    <div class="podaci">
+        <img src="assets/images/SK_Prezentacija-2-11.png">
+        <div class="text">
+            <h1>Kako do nas?</h1>
+<p>Svoje narudžbe možete izvršiti pozivom na broj: 060 346 16 15; ili mailom: skrivdic@gmail.com , kao i porukom na našim profilima na Facebook:  PP “Malinica”
+    Instagram:  malinica.likeri</p>
+        </div>
+
+    </div>
+</div>
+
+
+<?php
+include ('assets/includes/footer.php');
+?>
+
+
+
 </body>
 </html>
