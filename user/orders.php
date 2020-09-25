@@ -64,7 +64,7 @@ if(isset($_SESSION['msg'])){
                 <p><?= $row['FNAME']." ".$row['LNAME'] ?></p>
                 <p><?= $row['Address']?></p>
                 <p><?= date( 'd.m.Y H:i:s',strtotime($row['OTIME']))?></p>
-                <p><?= $row['Total'] ?></p>
+                <p><?= $row['Total'] ?>KM</p>
                 <p><?= $row['Status']?></p>
                 <p><a href="singleorder.php?id=<?=$row['OID']?>">Detalji</a></p>
             </div>
@@ -88,7 +88,7 @@ if(isset($_SESSION['msg'])){
                 <p><?= $row['FNAME']." ".$row['LNAME'] ?></p>
                 <p><?= $row['Address']?></p>
                 <p><?= date( 'd.m.Y H:i:s',strtotime($row['OTIME']))?></p>
-                <p><?= $row['Total'] ?></p>
+                <p><?= $row['Total'] ?>KM</p>
                 <p><?= $row['Status']?></p>
                 <p><a href="singleorder.php?id=<?=$row['OID']?>">Detalji</a></p>
             </div>
@@ -114,7 +114,7 @@ if(isset($_SESSION['msg'])){
                 <p><?= $row['FNAME']." ".$row['LNAME'] ?></p>
                 <p><?= $row['Address']?></p>
                 <p><?= date( 'd.m.Y H:i:s',strtotime($row['OTIME']))?></p>
-                <p><?= $row['Total'] ?></p>
+                <p><?= $row['Total'] ?>KM</p>
                 <p><?= $row['Status']?></p>
                 <p><a href="singleorder.php?id=<?=$row['OID']?>">Detalji</a></p>
             </div>

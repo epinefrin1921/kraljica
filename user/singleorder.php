@@ -17,157 +17,116 @@ unset($_SESSION['vaucher']);
 
 $query=mysqli_query($conn, 'select * from orders where OID='.$order);
 $query2=mysqli_query($conn, 'select * from order_line where OrderID='.$order);
+$title = "Uredite narudzbu"
 ?>
+
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Medni ducan</title>
-    <meta name="keywords" content="med medni ducan smjese pcele">
-    <meta name="description" content="Medni ducan je radnja smjestena u Visokom. U ponudi imamo raznih vrsta meda, mednih smjesa i proizvoda.">
-
-    <link rel="stylesheet" href="../assets/fonts/flat-icon/flaticon.css">
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/cart.css">
-    <link rel="icon" type="image/png" href="../assets/images/favicon%20(3).ico">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;700&family=Sacramento&display=swap" rel="stylesheet">
-</head>
+<?php
+include ('../assets/includes/header.php');
+?>
 <body>
-<div id="content-wrapper">
-    <header class="header header--bg">
-        <div class="container">
 
-            <?php
-            include ('../assets/includes/header.php');
-            ?>
-            <div class="header__content text-center">
-                <span class="header__content__block">Pojedinacna narudzba</span>
-                <h1 class="header__content__title"></h1>
-            </div>
-            <div class="social-icon pull-right">
-                <ul>
-                    <li><a href="https://www.facebook.com/medniducanvisoko/"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                </ul>
-            </div>
+<?php
+include ('../assets/includes/navbar.php');
+?>
+<div class="wrappper dobrodoslica">
+    <h1>Uredite narudzbu</h1>
+    <p>Promijenite status</p>
+</div>
+
+<?php
+include ('../assets/includes/adminheader.php');
+?>
+
+
+<div class="wrappper">
+    <div class="narudzbeStranica">
+        <h3>Informacije o klijentu:</h3>
+
+        <div class="informacijeNarudzba">
+            <p>Klijent</p>
+            <p>Adresa</p>
+            <p>Datum</p>
+            <p>Cijena</p>
+            <p>Status</p>
         </div>
-    </header>
 
-    <?php
-    include ('../assets/includes/adminheader.php');
-    ?>
+        <?php while($row=mysqli_fetch_assoc($query)): ?>
+            <div class="narudzbeSve">
+                <p><?= $row['FNAME']." ".$row['LNAME'] ?></p>
+                <p><?= $row['Address']?> - <?= $row['City']?> </p>
+                <p><?= date( 'd.m.Y H:i:s',strtotime($row['OTIME']))?></p>
+                <p><?= $row['Total'] ?></p>
+                <p><?= $row['Status']?></p>
+            </div>
+        <?php endwhile; ?>
+    </div>
+    <hr>
+    <div class="narudzbeStranica">
+        <h3>Informacije o proizvodima:</h3>
 
+        <div class="informacijeNarudzba">
+            <h3>Naziv</h3>
+            <h3>Kolicina</h3>
+            <h3>Cijena</h3>
+        </div>
 
-    <section id="menu" class="parallax-section">
-        <div class="orders">
-
-            <div class="row" style="text-align: center">
-                <h3>Informacije o klijentu:</h3>
-                <div class="sekcija">
-                    <p>Ime</p>
-                    <p>Prezime</p>
-                    <p>Adresa</p>
-                    <p>Grad</p>
-                    <p class="large">Telefon</p>
-                    <p class="large">Email</p>
-                </div>
-
-                <?php while($row=mysqli_fetch_assoc($query)): ?>
-                    <div class="sekcija">
-                        <p><?= $row['FNAME'] ?></p>
-                        <p><?= $row['LNAME'] ?></p>
-                        <p><?= $row['Address']?></p>
-                        <p><?= $row['City']?></p>
-                        <p class="large"><?= $row['Phone'] ?></p>
-                        <p class="large"><?= $row['email']?></p>
-                    </div>
-                    <h3>Vrijeme: <?= date( 'd.m.Y H:i:s',strtotime($row['OTIME']))?></h3>
-                    <h3>Status : <?= $row['Status']?></h3>
-                    <h3>Napomena: <?= $row['Extra']?></h3>
-                    <h3>Jedinstveni broj: <?= $row['ORDERNO']?></h3>
-
+        <?php
+        $total=0;
+        ?>
+        <?php while($row2=mysqli_fetch_assoc($query2)): ?>
+            <div class="naslovorder">
                 <?php
-                endwhile; ?>
-                <?php if(isset($_SESSION['id'])){ ?>
-
-                    <p>Promijeni status: </p>
-                    <form action="changestatus.php?id=<?=$order?>" method="post">
-                        <select name="status" id="status" required>
-                            <option value="" selected disabled hidden>Odaberite status</option>
-                            <option value="cekanje">Čekanje</option>
-                            <option value="poslano">Poslano</option>
-                            <option value="zavrseno">Završeno</option>
-                        </select>
-                        <input type="submit" value="Promijeni">
-                    </form>
-                <?php } ?>
-            </div>
-
-
-        </div>
-    </section>
-
-    <section id="menu" >
-        <div class="container">
-
-            <?php
-            $total=0;
-            ?>
-
-            <div class="row">
-
-                <div class="lista">
-
-                    <h3 style="text-align: center; width: 100%; margin-bottom: 30px">Informacije o proizvodima:</h3>
-
-                    <div>
-                        <div class="naslov" style="color: black">
-                            <h3>Klijent</h3>
-                            <h3>Kolicina</h3>
-                            <h3>Cijena</h3>
-                        </div>
-
-                    </div>
-
-                    <?php while($row2=mysqli_fetch_assoc($query2)): ?>
-                        <div class="naslov" style="color: black">
-
-                            <?php
-                            $query3 = mysqli_query($conn, "select * from products where PID ='{$row2['ItemID']}'");
-                            $row3= mysqli_fetch_assoc($query3);
-                            $total_price=0;
-                            $total_price+=$row2['Price']*$row2['Quantity'];
-                            $total+=$total_price;
-                            ?>
-
-                            <h3><?= $row3['NAME'] ?></h3>
-                            <h3><?= $row2['Quantity'] ?></h3>
-                            <h3><?= $total_price ?>KM</h3>
-
-
-                        </div>
-                    <?php endwhile; ?>
-
-                    <div class="total" style="color: black">
-                        <h3>Ukupno:  <?= $total?> KM</h3>
-                    </div>
-
+                $query3 = mysqli_query($conn, "select * from products where PID ='{$row2['ItemID']}'");
+                $row3= mysqli_fetch_assoc($query3);
+                $total_price=0;
+                $total_price+=$row2['Price']*$row2['Quantity'];
+                $total+=$total_price;
+                ?>
+                <div class="narudzbeSve">
+                    <p><?= $row3['NAME'] ?></p>
+                    <p><?= $row2['Quantity'] ?> kom</p>
+                    <p><?= $total_price ?>KM</p>
                 </div>
 
             </div>
+        <?php endwhile; ?>
+        <div class="total">
+            <h3>Ukupno:  <?= $total?> KM</h3>
         </div>
-    </section>
+        <?php if(isset($_SESSION['id'])){ ?>
 
-
-
-    <?php
-    include ('../assets/includes/footer.php');
-    unset($_SESSION['msg']);
-    ?>
+            <p>Promijeni status: </p>
+            <form action="changestatus.php?id=<?=$order?>" method="post">
+                <select name="status" id="status" required>
+                    <option value="" selected disabled hidden>Odaberite status</option>
+                    <option value="cekanje">Čekanje</option>
+                    <option value="poslano">Poslano</option>
+                    <option value="zavrseno">Završeno</option>
+                </select>
+                <input type="submit" value="Promijeni">
+            </form>
+        <?php } ?>
+    </div>
 
 </div>
-<script src="../assets/jquery/jquery-3.2.1.min.js"></script>
-<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+
+
+
+<div class="kontakt">
+    <div class="wrappper">
+        <h1>Imate pitanje?</h1>
+        <hr>
+        <p>Obratite nam se sa svim mogucim upitima</p>
+        <a href="kontakt.php">Kontaktirajte nas</a>
+    </div>
+</div>
+
+
+
+
+<?php
+include ('../assets/includes/footer.php');
+?>

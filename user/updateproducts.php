@@ -14,41 +14,24 @@ $row=mysqli_fetch_assoc($query);
 ?>
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Medni ducan</title>
-    <meta name="keywords" content="med medni ducan smjese pcele">
-    <meta name="description" content="Medni ducan je radnja smjestena u Visokom. U ponudi imamo raznih vrsta meda, mednih smjesa i proizvoda.">
-
-    <link rel="stylesheet" href="../assets/fonts/flat-icon/flaticon.css">
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" type="image/png" href="../assets/images/favicon%20(3).ico">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;700&family=Sacramento&display=swap" rel="stylesheet">
-</head>
+<?php
+include ('../assets/includes/header.php');
+?>
 <body>
-<div id="content-wrapper">
-    <header class="header header--bg">
-        <div class="container">
-            <?php
-            include ('../assets/includes/header.php');
-            ?>
-            <div class="header__content text-center">
-                <span class="header__content__block">Uredite proizvod</span>
-                <h1 class="header__content__title"></h1>
-            </div>
-            <div class="social-icon pull-right">
-                <ul>
-                    <li><a href="https://www.facebook.com/medniducanvisoko/"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <?php
-    include ('../assets/includes/adminheader.php');
-    ?>
 
+<?php
+include ('../assets/includes/navbar.php');
+?>
+
+
+<div class="wrappper dobrodoslica">
+    <h1>Uredite proizvod</h1>
+    <p>Dodajte kolicinu, uredite informacije</p>
+</div>
+
+<?php
+include ('../assets/includes/adminheader.php');
+?>
 
 
     <div class="forma container">
@@ -73,10 +56,9 @@ $row=mysqli_fetch_assoc($query);
                 <label for="kategorija">Kategorija</label>
                 <select name="kategorija" id="kategorija" required>
                     <option value="" selected disabled hidden>Odaberite kategoriju</option>
-                    <option value="med">Med</option>
-                    <option value="smjesa">Smjesa</option>
-                    <option value="medni proizvod">Medni proizvod</option>
-
+                    <option value="rakija">Rakija</option>
+                    <option value="liker">Liker</option>
+                    <option value="ostalo">Ostalo</option>
                 </select>
             </div>
             <label for="image">Slika:</label>
@@ -86,12 +68,22 @@ $row=mysqli_fetch_assoc($query);
         </form>
     </div>
 
+
+    <div class="kontakt">
+        <div class="wrappper">
+            <h1>Imate pitanje?</h1>
+            <hr>
+            <p>Obratite nam se sa svim mogucim upitima</p>
+            <a href="kontakt.php">Kontaktirajte nas</a>
+        </div>
+    </div>
+
+
     <?php
     include ('../assets/includes/footer.php');
     ?>
 
-</div>
-<script src="../assets/jquery/jquery-3.2.1.min.js"></script>
-<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+
+    </body>
+    </html>

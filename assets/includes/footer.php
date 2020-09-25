@@ -20,6 +20,7 @@
         <p>Developed by Nedim Ajdin</p>
         <?php if(!isset($_SESSION['id'])) :?>
             <p><a href="/s-kraljica/user/login.php">Login</a></p>
+            <p><a href="/s-kraljica/checkorder.php">Prati status</a></p>
         <?php endif; ?>
         <?php if(isset($_SESSION['id'])) :?>
             <p><a href="/s-kraljica/user/logout.php">Logout</a></p>

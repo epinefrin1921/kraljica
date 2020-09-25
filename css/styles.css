@@ -297,3 +297,32 @@ form input, form textarea, form button{
     justify-content: space-between;
     align-items: center;
 }
+#forma{
+    display: flex;
+    justify-content: space-between;
+}
+#forma input{
+    width: 100%;
+}
+#linkplacanje{
+    color: whitesmoke;
+    text-decoration: none;
+}
+#formcheckout{
+    width: 70%;
+    margin: 0 auto;
+}
+.zahvala{
+    padding: 100px;
+    text-align: center;
+}
+.total{
+    margin-top: 50px;
+}
+.naslovorder{
+    padding: 60px;
+}
+.sek{
+text-align: center;
+    padding: 50px;
+}

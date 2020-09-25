@@ -8,21 +8,20 @@ if(isset($_SESSION['id'])){
 ?>
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link href="../css/login.css" rel="stylesheet" type="text/css">
-</head>
+<?php
+include ('../assets/includes/header.php');
+?>
 <body>
 
+<?php
+include ('../assets/includes/navbar.php');
+?>
 <body>
-<h1><a href="../index.php">Dobrodošli</a></h1>
-<main>
-    <section class="sek">
+
+
+    <section class="sek wrappper">
+        <h1><a href="../index.php">Dobrodošli</a></h1>
+
         <form class="Login" action="validate.php"  method="post" name="clogin">
             <h2>Logujte se</h2>
 
@@ -39,6 +38,22 @@ if(isset($_SESSION['id'])){
             <input class="butt" type="submit" name="" value="Sign In">
         </form>
     </section>
+
+
+
+    <div class="kontakt">
+        <div class="wrappper">
+            <h1>Imate pitanje?</h1>
+            <hr>
+            <p>Obratite nam se sa svim mogucim upitima</p>
+            <a href="kontakt.php">Kontaktirajte nas</a>
+        </div>
+    </div>
+
+    <?php
+    include ('../assets/includes/footer.php');
+    ?>
+
 
 
 </body>

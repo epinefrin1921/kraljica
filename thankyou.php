@@ -1,52 +1,56 @@
 <?php
 session_start();
+include ('assets/includes/db.php');
+$title="Hvala - Kraljica"
 
 ?>
+
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Medni ducan</title>
-    <meta name="keywords" content="med medni ducan smjese pcele">
-    <meta name="description" content="Medni ducan je radnja smjestena u Visokom. U ponudi imamo raznih vrsta meda, mednih smjesa i proizvoda.">
-
-    <link rel="stylesheet" href="assets/fonts/flat-icon/flaticon.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="assets/images/favicon%20(3).ico">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;700&family=Sacramento&display=swap" rel="stylesheet">
-</head>
+<?php
+include ('assets/includes/header.php');
+?>
 <body>
-<div id="content-wrapper">
-    <header class="header header--bg">
-        <div class="container">
 
-            <?php
-            include ('assets/includes/header.php');
-            ?>
-
-            <div class="header__content text-center">
-                <span class="header__content__block">Hvala Vam na narudžbi. Vaš broj narudžbe je: <?php if (isset($_SESSION['broj'])) echo $_SESSION['broj']?></span>
-                <h1 class="header__content__title"></h1>
-                <p style="color: white"> Zapamtite broj i pratite status narudžbe!</p>
-            </div>
-            <div class="social-icon pull-right">
-                <ul>
-                    <li><a href="https://www.facebook.com/medniducanvisoko/"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
-
-
-    <?php
-    include ('assets/includes/footer.php');
-    ?>
-
+<?php
+include ('assets/includes/navbar.php');
+?>
+<div class="wrappper zahvala">
+    <h1 class="header__content__block">Hvala Vam na narudžbi. Vaš broj narudžbe je: <?php if (isset($_SESSION['broj'])) echo $_SESSION['broj']?></h1>
+    <p> Zapamtite broj i pratite status narudžbe!</p>
 </div>
-<script src="assets/jquery/jquery-3.2.1.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<div class="ikone">
+    <div class="wrappper ikone2">
+        <div class="item">
+            <p><i class="fas fa-wine-bottle fa-4x"></i></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut dolor dolorem error hic in, libero, maxime natus numquam odit optio praesentium, quibusdam repudiandae sit tempora tenetur unde ut? Libero. </p>
+        </div>
+        <div class="item">
+            <p><i class="fas fa-apple-alt fa-4x"></i></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut dolor dolorem error hic in, libero, maxime natus numquam odit optio praesentium, quibusdam repudiandae sit tempora tenetur unde ut? Libero. </p>
+
+        </div>
+        <div class="item">
+            <p><i class="fas fa-truck fa-4x"></i></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut dolor dolorem error hic in, libero, maxime natus numquam odit optio praesentium, quibusdam repudiandae sit tempora tenetur unde ut? Libero. </p>
+
+        </div>
+    </div>
+</div>
+
+<div class="kontakt">
+    <div class="wrappper">
+        <h1>Imate pitanje?</h1>
+        <hr>
+        <p>Obratite nam se sa svim mogucim upitima</p>
+        <a href="kontakt.php">Kontaktirajte nas</a>
+    </div>
+</div>
+<?php
+include ('assets/includes/footer.php');
+?>
+
+
+
 </body>
 </html>
