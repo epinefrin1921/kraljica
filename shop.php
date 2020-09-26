@@ -43,6 +43,7 @@ include ('assets/includes/navbar.php');
             <h3><?= $row['PRICE'] ?>KM</h3>
             <p>Na stanju: <?= $row['QUANTITY']-$incart ?></p>
             <p>U korpici: <?= $incart ?></p>
+            <p><a href="singleproduct.php?id=<?= $row['PID'] ?>">Vise informacija</a></p>
             <div>
                 <form action="order/cart.php?id=<?= $row['PID'] ?>" method="post" style="width: 100%">
                     <input type="number" step="1" min="1" placeholder="Kolicina" id="quantity" name="quantity"  required max="<?= $row['QUANTITY']-$incart ?>" style="width: 40%">

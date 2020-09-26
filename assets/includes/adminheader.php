@@ -6,8 +6,10 @@
             <a href="/s-kraljica/user/addproduct.php">Dodaj proizvod</a>
             <a href="/s-kraljica/user/employees.php">Zaposleni</a>
             <a href="/s-kraljica/user/orders.php">Narudzbe</a>
-            <!--            <a href="/s-kraljica/blog.php">Blog</a>-->
+            <a href="/s-kraljica/user/newblog.php">Blog</a>
             <a href="/s-kraljica/user/deleted.php" >Izbrisani proizvodi</a>
+            <a href="/s-kraljica/user/deletedblogs.php" >Izbrisani blogovi</a>
+
         </div>
     </div>
 </nav>

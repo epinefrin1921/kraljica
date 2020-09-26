@@ -1,104 +1,58 @@
 <?php
 session_start();
+include('assets/includes/db.php');
 
+$query = mysqli_query($conn, 'select * from blog where DateDeleted is null');
+
+$title = 'Blog - Kraljica'
 ?>
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Medni ducan</title>
-    <meta name="keywords" content="med medni ducan smjese pcele">
-    <meta name="description" content="Medni ducan je radnja smjestena u Visokom. U ponudi imamo raznih vrsta meda, mednih smjesa i proizvoda.">
-
-    <link rel="stylesheet" href="assets/fonts/flat-icon/flaticon.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="assets/images/favicon%20(3).ico">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;700&family=Sacramento&display=swap" rel="stylesheet">
-</head>
+<?php
+include ('assets/includes/header.php');
+?>
 <body>
-<div id="content-wrapper">
-    <header class="header header--bg">
-        <div class="container">
 
-            <?php
-            include ('assets/includes/header.php');
-            ?>
+<?php
+include ('assets/includes/navbar.php');
+?>
 
-            <div class="header__content text-center">
-                <span class="header__content__block">Blog</span>
-                <h1 class="header__content__title"></h1>
-                <ul class="header__content__sub-title">
-                    <li>MED <span class="padding">&#45;</span></li>
-                    <li>SMJESE <span class="padding">&#45;</span></li>
-                    <li>MEDNI PROIZVODI</li>
-                </ul>
-            </div>
-            <div class="social-icon pull-right">
-                <ul>
-                    <li><a href="https://www.facebook.com/medniducanvisoko/"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
-
-    <section class="blog">
-        <div class="container">
-            <div class="page-section">
+            <div class="wrappper">
                 <h2 class="page-section__title">Nas blog</h2>
-                <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
                 <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <div class="row gutters-40">
-                    <div class="col-md-4">
-                        <div class="thumbnail text-center">
-                            <img class="img-responsive" src="assets/images/blog-1.png" alt="">
-                            <p class="blog__single__date">MAY 25 , 2017 </p>
-                            <i class="material-icons">comment</i> 5
-                            <a href="#"><h4 class="blog__single__title">HEADLINE LATEST WORLD NEWS</h4></a>
-                            <p class="blog__single__paragraph">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Ut enim ad minim veniam <a href="#"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-                        </div>
+
+                <div class="blogovi">
+                    <?php while($row = mysqli_fetch_assoc($query)): ?>
+
+                    <div class="blog">
+                            <img class="img-responsive" src="images/blog/<?= $row['IMAGE'] ?>" alt="">
+                           <div class="blogInfo">
+                               <p class="blog__single__date"><?= $row['DATE'] ?></p>
+                               <a href="#"><h1 class="blog__single__title"><?= $row['HEADLINE'] ?></h1></a>
+                               <p class="blog__single__paragraph"><?= $row['BODY'] ?> <a href="singleblog.php?id=<?= $row['BID'] ?>"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
+                           </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail text-center">
-                            <img src="assets/images/blog-2.png" alt="">
-                            <p class="blog__single__date">MAY 25 , 2017 </p>
-                            <i class="material-icons">comment</i> 5
-                            <a href="#"><h4 class="blog__single__title">HEADLINE LATEST WORLD NEWS</h4></a>
-                            <p class="blog__single__paragraph">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Ut enim ad minim veniam <a href="#"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail text-center">
-                            <img src="assets/images/blog-3.png" alt="">
-                            <p class="blog__single__date">MAY 25 , 2017 </p>
-                            <i class="material-icons">comment</i> 5
-                            <a href="#"><h4 class="blog__single__title">HEADLINE LATEST WORLD NEWS</h4></a>
-                            <p class="blog__single__paragraph">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Ut enim ad minim veniam <a href="#"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-                        </div>
-                    </div>
+                <?php endwhile; ?>
                 </div>
+
             </div>
-        </div>
-    </section>
 
-    <section class="brand-logo brand-logo--bg">
-        <div class="container">
-            <div class="row">
-                <div class="brand-logo__wrapper">
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <?php
-    include ('assets/includes/footer.php');
-    ?>
-
+<div class="kontakt">
+    <div class="wrappper">
+        <h1>Imate pitanje?</h1>
+        <hr>
+        <p>Obratite nam se sa svim mogucim upitima</p>
+        <a href="kontakt.php">Kontaktirajte nas</a>
+    </div>
 </div>
-<script src="assets/jquery/jquery-3.2.1.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+<?php
+include ('assets/includes/footer.php');
+?>
+
+
+
 </body>
 </html>

@@ -326,3 +326,34 @@ form input, form textarea, form button{
 text-align: center;
     padding: 50px;
 }
+.single{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.single img{
+    width: 50%;
+}
+.singleInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.blogovi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.blog{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+}
+.blog img{
+    width: 30%;
+}
+

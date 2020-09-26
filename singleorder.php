@@ -42,7 +42,6 @@ include ('assets/includes/navbar.php');
             <p>Datum</p>
             <p>Cijena</p>
             <p>Status</p>
-            <p>Detalji</p>
         </div>
 
         <?php while($row=mysqli_fetch_assoc($query)): ?>
@@ -52,7 +51,6 @@ include ('assets/includes/navbar.php');
                 <p><?= date( 'd.m.Y H:i:s',strtotime($row['OTIME']))?></p>
                 <p><?= $row['Total'] ?></p>
                 <p><?= $row['Status']?></p>
-                <p><a href="singleorder.php?id=<?=$row['OID']?>">Detalji</a></p>
             </div>
         <?php endwhile; ?>
     </div>

@@ -62,7 +62,7 @@ include ('assets/includes/navbar.php');
         <div>
             <p>Medovača</p>
             <hr class="linija">
-            <p>Jaka rakija</p>
+            <p><a href="singleproduct.php?id=2">Procitaj vise</a></p>
         </div>
     </div>
     <div class="proizvod">
@@ -70,7 +70,7 @@ include ('assets/includes/navbar.php');
         <div>
             <p>Medovača</p>
             <hr class="linija">
-            <p>Jaka rakija</p>
+            <p><a href="singleproduct.php?id=2">Procitaj vise</a></p>
         </div>
     </div>
     <div class="proizvod">
@@ -78,7 +78,7 @@ include ('assets/includes/navbar.php');
         <div>
             <p>Medovača</p>
             <hr class="linija">
-            <p>Jaka rakija</p>
+            <p><a href="singleproduct.php?id=2">Procitaj vise</a></p>
         </div>
     </div>
     <div class="proizvod">
@@ -86,7 +86,7 @@ include ('assets/includes/navbar.php');
         <div>
             <p>Medovača</p>
             <hr class="linija">
-            <p>Jaka rakija</p>
+            <p><a href="singleproduct.php?id=2">Procitaj vise</a></p>
         </div>
     </div>
 </div>

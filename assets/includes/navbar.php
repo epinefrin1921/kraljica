@@ -10,7 +10,7 @@
                     (<?= $_SESSION['total']?>KM)
                 <?php endif; ?>
             </a>
-<!--            <a href="/s-kraljica/blog.php">Blog</a>-->
+            <a href="/s-kraljica/blog.php">Blog</a>
             <a href="/s-kraljica/kontakt.php">Kontakt</a>
         </div>
     </div>
