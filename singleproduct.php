@@ -19,7 +19,7 @@ if(is_null($ID)){
     header('Location: error.php');
     exit();
 }
-
+$title = $Name.' - Kraljica';
 ?>
 
 <!doctype html>

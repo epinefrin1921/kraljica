@@ -349,11 +349,14 @@ text-align: center;
 .blog{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 50px;
 }
+
 .blog img{
     width: 30%;
 }
-
+.blogSvi{
+    padding: 100px;
+}

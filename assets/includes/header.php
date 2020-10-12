@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.6.0/js/all.js"></script>
+    <link rel="icon" href="/s-kraljica/assets/images/favicon (4).ico" type="image/x-icon">
 
     <title><?= $title ?></title>
 </head>
