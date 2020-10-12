@@ -8,7 +8,7 @@ include ('../assets/includes/db.php');
 
 $id=$_GET['id'];
 
-mysqli_query($conn, 'update Products set DateDeleted=sysdate() where PID='.$id);
+mysqli_query($conn, 'update products set DateDeleted=sysdate() where PID='.$id);
 
 header('Location: ../shop.php');
 exit();

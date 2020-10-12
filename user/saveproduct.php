@@ -21,14 +21,14 @@ $id=$_GET['id'];
 
 
 if(!checkRequiredField($_FILES['image']['name'])){
-    mysqli_query($conn, "update PRODUCTS 
+    mysqli_query($conn, "update products 
                            set NAME='{$name}', PRICE='{$cijena}', QUANTITY= '{$kolicina}', DESCRIPTION='{$text}', CATEGORY='{$kategorija}'
                            where PID= ".$id);
 }
 else{
     $image = $_FILES['image']['name'];
     move_uploaded_file($_FILES['image']['tmp_name'], '../images/' . $image);
-    mysqli_query($conn, "update PRODUCTS 
+    mysqli_query($conn, "update products 
                            set NAME='{$name}', PRICE='{$cijena}', QUANTITY= '{$kolicina}', DESCRIPTION='{$text}', IMAGE='{$image}', CATEGORY='{$kategorija}'
                            where PID= ".$id);
 }
