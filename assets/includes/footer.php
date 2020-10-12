@@ -19,12 +19,12 @@
     <div class="credits">
         <p>Developed by Nedim Ajdin</p>
         <?php if(!isset($_SESSION['id'])) :?>
-            <p><a href="/s-kraljica/user/login.php">Login</a></p>
-            <p><a href="/s-kraljica/checkorder.php">Prati status</a></p>
+            <p><a href="/user/login.php">Login</a></p>
+            <p><a href="//checkorder.php">Prati status</a></p>
         <?php endif; ?>
         <?php if(isset($_SESSION['id'])) :?>
-            <p><a href="/s-kraljica/user/logout.php">Logout</a></p>
-            <p><a href="/s-kraljica/user/myaccount.php">My account</a></p>
+            <p><a href="/user/logout.php">Logout</a></p>
+            <p><a href="/user/myaccount.php">My account</a></p>
         <?php endif; ?>
     </div>
 </footer>
