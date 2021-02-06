@@ -18,6 +18,7 @@ move_uploaded_file($_FILES['image']['tmp_name'], '../images/blog/' . $image);
 mysqli_query($conn, "insert into blog(HEADLINE, BODY, DATE, USER, IMAGE) values
                            ('{$naslov}', '{$text}', sysdate(), '{$id}','{$image}' )");
 
+$_SESSION['msg']='Blog dodan!';
 
 header('Location: myaccount.php');
 

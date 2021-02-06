@@ -3,6 +3,11 @@ include('../assets/includes/db.php');
 session_start();
 
 
+$id=$_SESSION['id'];
+$query=mysqli_query($conn, 'select * from users where UID = '.$id);
+$row2=mysqli_fetch_assoc($query);
+
+
 $order=$_GET['id'];
 
 if(is_null($order)){
@@ -17,7 +22,7 @@ unset($_SESSION['vaucher']);
 
 $query=mysqli_query($conn, 'select * from orders where OID='.$order);
 $query2=mysqli_query($conn, 'select * from order_line where OrderID='.$order);
-$title = "Uredite narudzbu"
+$title = "Uredite narudžbu"
 ?>
 
 <!doctype html>
@@ -30,9 +35,17 @@ include ('../assets/includes/header.php');
 <?php
 include ('../assets/includes/navbar.php');
 ?>
-<div class="wrappper dobrodoslica">
-    <h1>Uredite narudzbu</h1>
-    <p>Promijenite status</p>
+<div class="container py-5">
+    <h1> Dobrodošli, <?= $row2['FNAME'] ?></h1>
+    <hr>
+    <p>Upravljajte svojim biznisom</p>
+    <?php
+    if(isset($_SESSION['msg'])){ ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $_SESSION['msg']; ?>
+        </div>
+    <?php }
+    ?>
 </div>
 
 <?php
@@ -40,89 +53,77 @@ include ('../assets/includes/adminheader.php');
 ?>
 
 
-<div class="wrappper">
-    <div class="narudzbeStranica">
-        <h3>Informacije o klijentu:</h3>
+<div class="container py-5">
+    <h4>Opće informacije: </h4>
 
-        <div class="informacijeNarudzba">
-            <p>Klijent</p>
-            <p>Adresa</p>
-            <p>Datum</p>
-            <p>Cijena</p>
-            <p>Status</p>
-        </div>
-
-        <?php while($row=mysqli_fetch_assoc($query)): ?>
-            <div class="narudzbeSve">
-                <p><?= $row['FNAME']." ".$row['LNAME'] ?></p>
-                <p><?= $row['Address']?> - <?= $row['City']?> </p>
-                <p><?= date( 'd.m.Y H:i:s',strtotime($row['OTIME']))?></p>
-                <p><?= $row['Total'] ?></p>
-                <p><?= $row['Status']?></p>
-            </div>
-        <?php endwhile; ?>
+    <div class="d-flex justify-content-between flex-wrap">
+        <p>Klijent</p>
+        <p>Adresa</p>
+        <p>Datum</p>
+        <p>Cijena</p>
+        <p>Status</p>
     </div>
+
     <hr>
-    <div class="narudzbeStranica">
-        <h3>Informacije o proizvodima:</h3>
-
-        <div class="informacijeNarudzba">
-            <h3>Naziv</h3>
-            <h3>Kolicina</h3>
-            <h3>Cijena</h3>
+    <?php while($row=mysqli_fetch_assoc($query)): ?>
+        <div class="d-flex justify-content-between flex-wrap">
+            <p><?= $row['FNAME']." ".$row['LNAME'] ?></p>
+            <p><?= $row['Address']?> - <?= $row['City']?> </p>
+            <p><?= date( 'd.m.Y H:i:s',strtotime($row['OTIME']))?></p>
+            <p><?= $row['Total'] ?>KM</p>
+            <p><?= $row['Status']?></p>
         </div>
+    <?php endwhile; ?>
 
-        <?php
-        $total=0;
-        ?>
-        <?php while($row2=mysqli_fetch_assoc($query2)): ?>
-            <div class="naslovorder">
-                <?php
-                $query3 = mysqli_query($conn, "select * from products where PID ='{$row2['ItemID']}'");
-                $row3= mysqli_fetch_assoc($query3);
-                $total_price=0;
-                $total_price+=$row2['Price']*$row2['Quantity'];
-                $total+=$total_price;
-                ?>
-                <div class="narudzbeSve">
-                    <p><?= $row3['NAME'] ?></p>
-                    <p><?= $row2['Quantity'] ?> kom</p>
-                    <p><?= $total_price ?>KM</p>
-                </div>
+    <hr>
 
-            </div>
-        <?php endwhile; ?>
-        <div class="total">
-            <h3>Ukupno:  <?= $total?> KM</h3>
-        </div>
-        <?php if(isset($_SESSION['id'])){ ?>
+    <h3 class="py-5">Informacije o proizvodima:</h3>
 
-            <p>Promijeni status: </p>
-            <form action="changestatus.php?id=<?=$order?>" method="post">
-                <select name="status" id="status" required>
-                    <option value="" selected disabled hidden>Odaberite status</option>
-                    <option value="cekanje">Čekanje</option>
-                    <option value="poslano">Poslano</option>
-                    <option value="zavrseno">Završeno</option>
-                </select>
-                <input type="submit" value="Promijeni">
-            </form>
-        <?php } ?>
+    <div class="d-flex justify-content-between flex-wrap">
+        <p>Naziv</p>
+        <p>Kolicina</p>
+        <p>Cijena</p>
     </div>
 
+    <hr>
+
+    <?php
+    $total=0;
+    ?>
+    <?php while($row2=mysqli_fetch_assoc($query2)): ?>
+        <div class="d-flex  justify-content-between flex-wrap">
+            <?php
+            $query3 = mysqli_query($conn, "select * from products where PID ='{$row2['ItemID']}'");
+            $row3= mysqli_fetch_assoc($query3);
+            $total_price=0;
+            $total_price+=$row2['Price']*$row2['Quantity'];
+            $total+=$total_price;
+            ?>
+            <p><?= $row3['NAME'] ?></p>
+            <p><?= $row2['Quantity'] ?> kom</p>
+            <p><?= $total_price ?>KM</p>
+        </div>
+    <?php endwhile; ?>
+    <div class="container py-5">
+        <h3>Ukupno:  <?= $total?> KM</h3>
+    </div>
+
+    <?php if(isset($_SESSION['id'])){ ?>
+
+        <p>Promijeni status: </p>
+        <form action="changestatus.php?id=<?=$order?>" method="post">
+            <select class="form-control" name="status" id="status" required>
+                <option value="" selected disabled hidden>Odaberite status</option>
+                <option value="cekanje">Čekanje</option>
+                <option value="poslano">Poslano</option>
+                <option value="zavrseno">Završeno</option>
+            </select>
+            <input class="btn btn-dark mt-2" type="submit" value="Promijeni">
+        </form>
+    <?php } ?>
 </div>
 
 
-
-
-<div class="kontakt">
-    <div class="wrappper">
-        <h1>Imate pitanje?</h1>
-        <hr>
-        <p>Obratite nam se sa svim mogucim upitima</p>
-        <a href="kontakt.php">Kontaktirajte nas</a>
-    </div>
-</div>
 
 
 

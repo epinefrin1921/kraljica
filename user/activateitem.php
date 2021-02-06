@@ -12,4 +12,7 @@ $id = $_GET['id'];
 mysqli_query($conn, 'update products set DateDeleted=null where PID=' . $id);
 
 header('Location: ../shop.php');
+
+$_SESSION['msg']='Proizvod aktiviran!';
+
 exit();

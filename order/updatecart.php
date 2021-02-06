@@ -21,6 +21,7 @@ foreach ($_SESSION['products'] as $index => $item) {
             unset($_SESSION['order_placed']);
             unset($_SESSION['total']);
             $_SESSION['products']=[];
+            $_SESSION['msg']='Desila se greška!';
 
             exit();
         }
@@ -31,5 +32,6 @@ foreach ($_SESSION['products'] as $index => $item) {
         break;
     }
 }
+$_SESSION['msg']='Korpa ažurirana!';
 
 header('Location: ../cart.php');

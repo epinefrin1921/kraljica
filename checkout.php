@@ -16,23 +16,25 @@ include ('assets/includes/header.php');
 include ('assets/includes/navbar.php');
 ?>
 
-<div class="wrappper naslovshop">
-    <h1>Unesite podatke i uzivajte u picu u roku od 48h.</h1>
+<div class="container py-5">
+    <h1>Unesite podatke i uzivajte u piću u roku od 48h.</h1>
     <hr>
-    <p>Narucite sigurno i jednostavno, platite pouzecu</p>
+    <p>Naručite sigurno i jednostavno, platite pouzeću</p>
+    <p>Nakon narudžbe, dobit ćete kod koji možete koristiti da provjerite status narudžbe</p>
+
 </div>
 
-<div class="wrappper" id="checkout">
+<div class="container">
         <form id="formcheckout" method="post" action="order/placeorder.php">
-            <input name="name" type="text" class="form-control" placeholder="Vaše ime" required>
-            <input name="lastname" type="text" class="form-control" placeholder="Vaše prezime" required>
-            <input name="address" type="text" class="form-control" placeholder="Adresa" required>
-            <input name="city" type="text" class="form-control" placeholder="Grad" required>
-            <input name="phone" type="text" class="form-control" placeholder="Broj telefona" required>
-            <input name="email" type="email" class="form-control" placeholder="Email" required>
-            <input name="extra" type="text" class="form-control" placeholder="Posebna napomena">
+            <input name="name" type="text" class="form-control mt-2" placeholder="Vaše ime" required>
+            <input name="lastname" type="text" class="form-control mt-2" placeholder="Vaše prezime" required>
+            <input name="address" type="text" class="form-control mt-2" placeholder="Adresa" required>
+            <input name="city" type="text" class="form-control mt-2" placeholder="Grad" required>
+            <input name="phone" type="text" class="form-control mt-2" placeholder="Broj telefona" required>
+            <input name="email" type="email" class="form-control mt-2" placeholder="Email" required>
+            <textarea name="extra" class="form-control mt-2" placeholder="Posebna napomena"></textarea>
 
-            <div class="ukupno">
+            <div class="container my-5">
                 <div class="checkout">
                     <h3>Ukupno: <?= $total ?>KM</h3>
                     <p>Dostava: 10KM</p>
@@ -40,16 +42,33 @@ include ('assets/includes/navbar.php');
                     <hr>
                 </div>
             </div>
+            <button type="button" class="btn btn-dark form-control" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Naruči
+            </button>
 
-            <input id="click" class="btn btn-dark form-control submit" onclick="return confirm('Da li ste sigurni? Vasa narudžba će biti poslana na adresu!');" type="submit"  value="Naruči">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Narudžba će biti poslana</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Ako potvrdite narudžbu, očekujte naš poziv ubrzo
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Zatvori</button>
+                            <button type="submit" id="click" class="btn btn-success submit">Da, siguran sam</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
 </div>
-
 
 <?php
 include ('assets/includes/footer.php');
 ?>
-
 
 
 </body>

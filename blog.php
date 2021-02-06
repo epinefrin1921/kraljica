@@ -16,33 +16,40 @@ include ('assets/includes/header.php');
 <?php
 include ('assets/includes/navbar.php');
 ?>
+<div class="container py-5">
 
-            <div class="wrappper blogSvi">
-                <h2 class="page-section__title">Nas blog</h2>
-                <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        <h1>Blog</h1>
+        <hr>
+        <p>Aktuelnosti i novosti vezane za Kraljicu</p>
+        <?php
+        if(isset($_SESSION['msg'])){ ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo $_SESSION['msg']; ?>
+            </div>
+        <?php }
+        ?>
 
-                <div class="blogovi">
-                    <?php while($row = mysqli_fetch_assoc($query)): ?>
+    <div class="container">
+        <?php while($row = mysqli_fetch_assoc($query)): ?>
 
-                    <div class="blog">
-                            <img class="img-responsive" src="images/blog/<?= $row['IMAGE'] ?>" alt="">
-                           <div class="blogInfo">
-                               <p class="blog__single__date"><?= $row['DATE'] ?></p>
-                               <a href="singleblog.php?id=<?= $row['BID'] ?>"><h1 class="blog__single__title"><?= $row['HEADLINE'] ?></h1></a>
-                               <p class="blog__single__paragraph"><?= $row['BODY'] ?> <a href="singleblog.php?id=<?= $row['BID'] ?>"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-                           </div>
-                    </div>
-                <?php endwhile; ?>
+            <div class="container d-flex p-2 py-5 justify-content-center flex-wrap">
+                <div class="col-12 col-md-5">
+                    <img src="images/blog/<?= $row['IMAGE'] ?>" width="100%" alt="Blog image">
+                </div>
+
+                <div class="col-12 col-md-6 d-flex flex-column p-3">
+                    <h3 class="media-heading"><?= $row['HEADLINE'] ?></h3>
+                    <p>Postavljeno: <?= $row['DATE'] ?></p>
+                    <p>
+                        <?=  substr($row['BODY'], 0, 100) ?>
+                    </p>
+                    <p><a href="singleblog.php?id=<?=$row['BID'] ?>"><span>Pročitaj više</span></a></p>
                 </div>
 
             </div>
-
-<div class="kontakt">
-    <div class="wrappper">
-        <h1>Imate pitanje?</h1>
         <hr>
-        <p>Obratite nam se sa svim mogucim upitima</p>
-        <a href="kontakt.php">Kontaktirajte nas</a>
+
+        <?php endwhile; ?>
     </div>
 </div>
 

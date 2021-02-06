@@ -35,5 +35,7 @@ $image = $_FILES['image']['name'];
 move_uploaded_file($_FILES['image']['tmp_name'], '../images/blog/' . $image);
 
 
+$_SESSION['msg']='Blog dodan!';
+
 header('Location: ../blog.php');
 exit();

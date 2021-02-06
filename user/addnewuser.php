@@ -23,38 +23,39 @@ include ('../assets/includes/header.php');
 include ('../assets/includes/navbar.php');
 ?>
 
-<div class="wrappper dobrodoslica">
-    <h1> Dobrodosli, <?= $row['FNAME'] ?></h1>
+<div class="container py-5">
+    <h1> Dobrodošli, <?= $row['FNAME'] ?></h1>
+    <hr>
     <p>Upravljajte svojim biznisom</p>
 </div>
 
 <?php
 include ('../assets/includes/adminheader.php');
 ?>
+<div class="container py-5">
 
 
-                <div class="forma container">
                     <h3>Dodajte administratora stranice</h3>
                     <form action="insertuser.php" method="post">
                         <div>
                             <label for="first_name">First name</label>
-                            <input type="text" name="first_name" id="first_name" required>
+                            <input class="form-control my-2" type="text" name="first_name" id="first_name" required>
                         </div>
                         <div>
                             <label for="last_name">Last name</label>
-                            <input type="text" name="last_name" id="last_name" required>
+                            <input class="form-control my-2" type="text" name="last_name" id="last_name" required>
                         </div>
                         <div>
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" required>
+                            <input class="form-control my-2" type="email" name="email" id="email" required>
                         </div>
                         <div>
                             <label for="password">Password</label>
-                            <input type="password" name="password" id="password" required>
+                            <input class="form-control my-2" type="password" name="password" id="password" required>
                         </div>
-                        <input type="submit">
+                        <input type="submit" class="btn btn-dark" value="Dodaj">
                     </form>
-                </div>
+</div>
 
 
 <?php

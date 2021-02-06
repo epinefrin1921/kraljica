@@ -10,5 +10,8 @@ $id=$_GET['id'];
 
 mysqli_query($conn, 'update blog set DateDeleted=sysdate() where BID='.$id);
 
+
+$_SESSION['msg']='Blog izbrisan!';
+
 header('Location: ../blog.php');
 exit();

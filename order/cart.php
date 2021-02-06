@@ -18,6 +18,7 @@ if($quantity>$row['QUANTITY']){
     unset($_SESSION['order_placed']);
     unset($_SESSION['total']);
     $_SESSION['products']=[];
+    $_SESSION['msg']='Desila se greška!';
 
     exit();
 }
@@ -27,6 +28,7 @@ foreach($_SESSION['products'] as $index=>$item){
     if($item[0]==$id){
         $_SESSION['products'][$index][1]+=$quantity;
         $_SESSION['product_added']=true;
+        $_SESSION['msg']='Proizvod dodan u korpu!';
         header('Location: ../shop.php');
         exit();
     }
@@ -44,5 +46,7 @@ else{
     );
 }
 $_SESSION['product_added']=true;
+$_SESSION['msg']='Proizvod dodan u korpu!';
+
 header('Location: ../shop.php');
 exit();

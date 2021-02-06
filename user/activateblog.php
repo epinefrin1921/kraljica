@@ -12,4 +12,7 @@ $id = $_GET['id'];
 mysqli_query($conn, 'update blog set DateDeleted=null where BID=' . $id);
 
 header('Location: ../blog.php');
+
+$_SESSION['msg']='Blog aktiviran!';
+
 exit();

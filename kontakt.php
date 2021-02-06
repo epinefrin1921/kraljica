@@ -15,34 +15,33 @@ include ('assets/includes/header.php');
 include ('assets/includes/navbar.php');
 ?>
 
-<div class="wrappper info">
+<div  class="container py-5">
     <div>
         <h1>Kontakt</h1>
         <p>PP "Malinica"</p>
-        <p>Broj telefona: +387603461615</p>
+        <p>Broj telefona: +387603461615 (dostupni smo i na Viber i Whatsapp)</p>
         <p>email: info@s-kraljica.ba</p>
     </div>
-    <div>
-        <h1>Posaljite upit</h1>
-
-        <form method="post" action="" class="needs-validation" novalidate>
-            <label for="validationCustom01">Email</label>
-            <input style="width: 60%" type="email" class="form-control" id="validationCustom01" placeholder="Unesite email" required>
-            <div class="valid-feedback">
-                Izgleda dobro!
-            </div>
-            <div class="invalid-feedback">
-                Molimo unesite validnu email adresu!
-            </div>
-            <label>
-                <textarea style="width: 60%" name="poruka" placeholder="Unesite poruku" rows="3" class="form-control"></textarea>
-            </label>
-            <button type="submit" class="btn btn-dark">Posalji</button>
-        </form>
-    </div>
+<!--    <div>-->
+<!--        <h1>Posaljite upit</h1>-->
+<!---->
+<!--        <form method="post" action="" class="needs-validation" novalidate>-->
+<!--            <label for="validationCustom01">Email</label>-->
+<!--            <input style="width: 60%" type="email" class="form-control" id="validationCustom01" placeholder="Unesite email" required>-->
+<!--            <div class="valid-feedback">-->
+<!--                Izgleda dobro!-->
+<!--            </div>-->
+<!--            <div class="invalid-feedback">-->
+<!--                Molimo unesite validnu email adresu!-->
+<!--            </div>-->
+<!--            <label>-->
+<!--                <textarea style="width: 60%" name="poruka" placeholder="Unesite poruku" rows="3" class="form-control"></textarea>-->
+<!--            </label>-->
+<!--            <button type="submit" class="btn btn-dark">Posalji</button>-->
+<!--        </form>-->
+<!--    </div>-->
 
 </div>
-
 
 
 <div id="mapa">
@@ -73,8 +72,5 @@ include ('assets/includes/footer.php');
         }, false);
     })();
 </script>
-
-
-
     </body>
 </html>

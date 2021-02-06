@@ -14,5 +14,7 @@ if(!isset($_SESSION['id'])){
 
 mysqli_query($conn, 'delete from users where UID=' . $id);
 
+$_SESSION['msg']='Osoba izbrisana!';
+
 header('Location: employees.php');
 exit();

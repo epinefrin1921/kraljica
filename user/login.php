@@ -5,6 +5,8 @@ if(isset($_SESSION['id'])){
     header('Location: ../index.php');
     exit();
 }
+$title = "Kraljica - login";
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,41 +20,25 @@ include ('../assets/includes/navbar.php');
 ?>
 <body>
 
-
-    <section class="sek wrappper">
-        <h1><a href="../index.php">Dobrodošli</a></h1>
-
-        <form class="Login" action="validate.php"  method="post" name="clogin">
-            <h2>Logujte se</h2>
-
-            <div class="textbox">
-                <i style='font-size:24px' class='far'>&#xf2bd;</i>
-                <input  placeholder="Unesite email" type="email" name="email" id="email" required>
-            </div>
-            <div class ="erroneus" id="usererror"></div>
-            <div class="textbox">
-                <i class="fas fa-lock"></i>
-                <input placeholder="Unesite lozinku" type="password" name="password" id="password" required>
-            </div>
-            <div class ="erroneus" id="loginerror"></div>
-            <input class="butt" type="submit" name="" value="Sign In">
-        </form>
-    </section>
-
-
-
-    <div class="kontakt">
-        <div class="wrappper">
-            <h1>Imate pitanje?</h1>
-            <hr>
-            <p>Obratite nam se sa svim mogucim upitima</p>
-            <a href="kontakt.php">Kontaktirajte nas</a>
-        </div>
+<div class="container py-5">
+    <div class="wrappper naslovshop">
+        <h1>Dobrodošli</h1>
+        <hr>
+        <p>Ulogujte se na admin portal</p>
     </div>
 
-    <?php
-    include ('../assets/includes/footer.php');
-    ?>
+    <div class="wrappper py-4">
+        <form id="contact-form" method="post" action="validate.php">
+            <input class="form-control my-2" placeholder="Unesite email" type="email" name="email" id="email" required>
+            <input class="form-control my-2" placeholder="Unesite lozinku" type="password" name="password" id="password" required>
+
+            <input id="click" type="submit" class="form-control submit btn btn-dark my-2" value="Login">
+        </form>
+    </div>
+</div>
+
+
+<?php include ('../assets/includes/footer.php'); ?>
 
 
 

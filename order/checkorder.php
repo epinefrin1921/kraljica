@@ -30,6 +30,6 @@ if($row){
     exit();
 }
 else{
-    header('Location: error.php');
+    header('Location: /kraljica/error.php');
     exit();
 }

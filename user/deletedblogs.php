@@ -2,7 +2,17 @@
 session_start();
 include('../assets/includes/db.php');
 
+if(!isset($_SESSION['id'])){
+    header('Location: ../index.php');
+    exit();
+}
+$id=$_SESSION['id'];
+
 $query = mysqli_query($conn, 'select * from blog where DateDeleted is not null');
+
+$query4=mysqli_query($conn, 'select * from users where UID = '.$id);
+$row=mysqli_fetch_assoc($query4);
+
 
 $title = 'Izbrisani blogovi - Kraljica'
 ?>
@@ -18,42 +28,38 @@ include ('../assets/includes/navbar.php');
 ?>
 
 
-<div class="wrappper dobrodoslica">
-<h1>Uredite blogove</h1>
+<div class="container py-5">
+    <h1> Dobrodošli, <?= $row['FNAME'] ?></h1>
+    <hr>
+    <p>Upravljajte svojim biznisom</p>
 </div>
 
 <?php
 include ('../assets/includes/adminheader.php');
 ?>
 
-<div class="wrappper">
-    <h2 class="page-section__title">Izbrisani blogovi</h2>
-    <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+<div class="container py-5">
+    <h2 >Izbrisani blogovi</h2>
 
-    <div class="blogovi">
-        <?php while($row = mysqli_fetch_assoc($query)): ?>
+    <div class="d-flex p-2 justify-content-between flex-wrap">
+        <p>Naslov</p>
+        <p>Datum dodavanja</p>
+        <p>Aktiviraj</p>
+    </div>
 
-            <div class="blog">
-                <img class="img-responsive" src="../images/blog/<?= $row['IMAGE'] ?>" alt="">
-                <div class="blogInfo">
-                    <p class="blog__single__date"><?= $row['DATE'] ?></p>
-                    <a href="#"><h1 class="blog__single__title"><?= $row['HEADLINE'] ?></h1></a>
-                    <p class="blog__single__paragraph"><?= $row['BODY'] ?> <a href="../singleblog.php?id=<?= $row['BID'] ?>"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-                    <p><a href="activateblog.php?id=<?= $row['BID'] ?>">Aktiviraj blog</a></p>
-                </div>
+    <?php while ($row=mysqli_fetch_assoc($query)): ?>
+        <div class="d-flex p-2 justify-content-between flex-wrap">
+            <p class="media-heading"><?= $row['HEADLINE'] ?></p>
+            <p class="media-heading marka"><?= $row['DATE'] ?></p>
+            <div>
+                <?php if(isset($_SESSION['id'])): ?>
+                    <a href="activateblog.php?id=<?= $row['BID'] ?>">Aktiviraj blog</a>
+                <?php endif; ?>
             </div>
-        <?php endwhile; ?>
-    </div>
+        </div>
+    <?php endwhile; ?>
 
-</div>
 
-<div class="kontakt">
-    <div class="wrappper">
-        <h1>Imate pitanje?</h1>
-        <hr>
-        <p>Obratite nam se sa svim mogucim upitima</p>
-        <a href="kontakt.php">Kontaktirajte nas</a>
-    </div>
 </div>
 
 

@@ -20,5 +20,8 @@ move_uploaded_file($_FILES['image']['tmp_name'], '../images/' . $image);
 mysqli_query($conn, "insert into products(NAME, PRICE, QUANTITY, DESCRIPTION, CATEGORY, IMAGE) values
                            ('{$name}', '{$cijena}', '{$kolicina}','{$text}', '{$kategorija}','{$image}' )");
 
+$_SESSION['msg']='Proizvod dodan!';
+
+
 header('Location: myaccount.php');
 exit();

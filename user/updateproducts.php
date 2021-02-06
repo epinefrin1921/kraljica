@@ -3,6 +3,12 @@ include('../assets/includes/db.php');
 session_start();
 
 
+$id=$_SESSION['id'];
+$title="Uredi proizvod - Kraljica";
+$query=mysqli_query($conn, 'select * from users where UID = '.$id);
+$row2=mysqli_fetch_assoc($query);
+
+
 if(!isset($_SESSION['id'])){
     header('Location: ../index.php');
     exit();
@@ -24,9 +30,10 @@ include ('../assets/includes/navbar.php');
 ?>
 
 
-<div class="wrappper dobrodoslica">
-    <h1>Uredite proizvod</h1>
-    <p>Dodajte kolicinu, uredite informacije</p>
+<div class="container py-5">
+    <h1> Dobrodošli, <?= $row2['FNAME'] ?></h1>
+    <hr>
+    <p>Upravljajte svojim biznisom</p>
 </div>
 
 <?php
@@ -34,27 +41,27 @@ include ('../assets/includes/adminheader.php');
 ?>
 
 
-    <div class="forma container">
+<div class="container py-5">
         <form action="saveproduct.php?id=<?=$id?>" method="post" enctype="multipart/form-data">
             <div>
                 <label for="name">Ime proizvoda</label>
-                <input type="text" name="name" id="name" required value="<?= $row['NAME'] ?>">
+                <input class="form-control my-2" type="text" name="name" id="name" required value="<?= $row['NAME'] ?>">
             </div>
             <div>
                 <label for="cijena">Cijena</label>
-                <input type="number" name="cijena" id="cijena" required step="0.5" value="<?= $row['PRICE'] ?>">
+                <input class="form-control my-2" type="number" name="cijena" id="cijena" required step="0.5" value="<?= $row['PRICE'] ?>">
             </div>
             <div>
                 <label for="kolicina">Kolicina</label>
-                <input type="number" name="kolicina" id="kolicina" required step="1" value="<?= $row['QUANTITY'] ?>">
+                <input class="form-control my-2" type="number" name="kolicina" id="kolicina" required step="1" value="<?= $row['QUANTITY'] ?>">
             </div>
             <div>
                 <label for="text">Opis</label>
-                <textarea name="text" id="text" required rows="10" cols="60"><?= $row['DESCRIPTION'] ?></textarea>
+                <textarea class="form-control my-2" name="text" id="text" required rows="10" cols="60"><?= $row['DESCRIPTION'] ?></textarea>
             </div>
             <div>
                 <label for="kategorija">Kategorija</label>
-                <select name="kategorija" id="kategorija" required>
+                <select class="form-control my-2" name="kategorija" id="kategorija" required>
                     <option value="" selected disabled hidden>Odaberite kategoriju</option>
                     <option value="rakija">Rakija</option>
                     <option value="liker">Liker</option>
@@ -62,21 +69,11 @@ include ('../assets/includes/adminheader.php');
                 </select>
             </div>
             <label for="image">Slika:</label>
-            <input type="file" placeholder="Image" id="image" name="image">
+            <input class="form-control my-2" type="file" placeholder="Image" id="image" name="image">
 
-            <input type="submit">
+            <input type="submit" class="btn btn-dark">
         </form>
-    </div>
-
-
-    <div class="kontakt">
-        <div class="wrappper">
-            <h1>Imate pitanje?</h1>
-            <hr>
-            <p>Obratite nam se sa svim mogucim upitima</p>
-            <a href="kontakt.php">Kontaktirajte nas</a>
-        </div>
-    </div>
+</div>
 
 
     <?php

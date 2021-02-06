@@ -27,8 +27,9 @@ include ('../assets/includes/header.php');
 include ('../assets/includes/navbar.php');
 ?>
 
-<div class="wrappper dobrodoslica">
-    <h1> Dobrodosli, <?= $row['FNAME'] ?></h1>
+<div class="container py-5">
+    <h1> Dobrodošli, <?= $row['FNAME'] ?></h1>
+    <hr>
     <p>Upravljajte svojim biznisom</p>
 </div>
 
@@ -37,22 +38,22 @@ include ('../assets/includes/adminheader.php');
 ?>
 
 
-<div class="forma container">
-    <h3>Uredite blog</h3>
+<div class="container py-5">
+    <h3>Uredite blog - <?= $row2['HEADLINE'] ?></h3>
     <form action="saveblog.php?id=<?= $row2['BID'] ?>" method="post" enctype="multipart/form-data">
         <div>
             <label for="name">Naslov</label>
-            <input type="text" name="name" id="name" required value="<?= $row2['HEADLINE'] ?>">
+            <input class="form-control mt-2" type="text" name="name" id="name" required value="<?= $row2['HEADLINE'] ?>">
         </div>
         <div>
             <label for="text">Tekst</label>
-            <textarea name="text" id="text" required rows="10" cols="60"><?= $row2['BODY'] ?></textarea>
+            <textarea class="form-control mt-2" name="text" id="text" required rows="10" cols="60"><?= $row2['BODY'] ?></textarea>
         </div>
 
         <label for="image">Slika:</label>
-        <input type="file" placeholder="Image" id="image" name="image">
+        <input class="form-control mt-2" type="file" placeholder="Image" id="image" name="image">
 
-        <input type="submit" value="Spremi vijest">
+        <input class="form-control btn btn-dark mt-2" type="submit" value="Spremi vijest">
     </form>
 </div>
 

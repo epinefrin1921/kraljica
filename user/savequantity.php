@@ -14,5 +14,8 @@ if(!isset($_SESSION['id'])){
 $query=mysqli_query($conn, 'update products set QUANTITY=QUANTITY + '.$quant.' where PID= '.$id);
 
 $url='Location: ../singleproduct.php?id='.$id;
+
+$_SESSION['msg']='Količina dodana!';
+
 header($url);
 exit();

@@ -16,5 +16,8 @@ if(!isset($_SESSION['id'])){
 mysqli_query($conn, "insert into users(FNAME, LNAME, EMAIL, PASSWORD) values
                            ('{$fname}', '{$lname}', '{$email}','{$pass}')");
 
+$_SESSION['msg']='Administrator dodan!';
+
+
 header("Location: myaccount.php");
 exit();

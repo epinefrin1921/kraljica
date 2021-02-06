@@ -23,8 +23,9 @@ include ('../assets/includes/header.php');
 include ('../assets/includes/navbar.php');
 ?>
 
-<div class="wrappper dobrodoslica">
-    <h1> Dobrodosli, <?= $row['FNAME'] ?></h1>
+<div class="container py-5">
+    <h1> Dobrodošli, <?= $row['FNAME'] ?></h1>
+    <hr>
     <p>Upravljajte svojim biznisom</p>
 </div>
 
@@ -33,22 +34,22 @@ include ('../assets/includes/adminheader.php');
 ?>
 
 
-<div class="forma container">
+<div class="container py-5">
     <h3>Dodajte novu vijest</h3>
     <form action="insertblog.php" method="post" enctype="multipart/form-data">
         <div>
             <label for="name">Naslov</label>
-            <input type="text" name="name" id="name" required>
+            <input class="form-control my-2" type="text" name="name" id="name" required>
         </div>
         <div>
             <label for="text">Tekst</label>
-            <textarea name="text" id="text" required rows="10" cols="60">Vijest</textarea>
+            <textarea class="form-control my-2" name="text" id="text" required rows="10" cols="60">Vijest</textarea>
         </div>
 
         <label for="image">Slika:</label>
-        <input type="file" placeholder="Image" id="image" name="image" required>
+        <input class="form-control my-2" type="file" placeholder="Image" id="image" name="image" required>
 
-        <input type="submit" value="Ubaci u bazu">
+        <input type="submit" value="Ubaci u bazu" class="btn btn-dark">
     </form>
 </div>
 

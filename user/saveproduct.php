@@ -37,6 +37,7 @@ $image = $_FILES['image']['name'];
 move_uploaded_file($_FILES['image']['tmp_name'], '../images/' . $image);
 
 
+$_SESSION['msg']='Proizvod sačuvan!';
 
 header('Location: ../shop.php');
 exit();

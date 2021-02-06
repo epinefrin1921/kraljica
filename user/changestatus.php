@@ -21,5 +21,8 @@ if(0==strcmp($status, 'zavrseno')){
 
 }
 $link='Location: singleorder.php?id='.$id;
+
+$_SESSION['msg']='Status promijenjen!';
+
 header($link);
 exit();

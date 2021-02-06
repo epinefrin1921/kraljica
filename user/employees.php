@@ -26,24 +26,28 @@ include ('../assets/includes/header.php');
 include ('../assets/includes/navbar.php');
 ?>
 
-<div class="wrappper dobrodoslica">
-    <h1> Dobrodosli, <?= $row['FNAME'] ?></h1>
+<div class="container py-5">
+    <h1> Dobrodošli, <?= $row['FNAME'] ?></h1>
+    <hr>
     <p>Upravljajte svojim biznisom</p>
+    <?php
+    if(isset($_SESSION['msg'])){ ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $_SESSION['msg']; ?>
+        </div>
+    <?php }
+    ?>
 </div>
 
 <?php
 include ('../assets/includes/adminheader.php');
 ?>
 
-<?php
-if(isset($_SESSION['msg'])){
-    echo $_SESSION['msg'];
-}
-?>
+
+<div class="container py-5">
 
 
 
-<div class="forma container">
     <h3>Spisak osoba:</h3>
     <?php
     while($row=mysqli_fetch_assoc($query)): ?>
@@ -52,9 +56,9 @@ if(isset($_SESSION['msg'])){
         <p>Email: <?= $row['EMAIL'] ?></p>
         <?php
         if(isset($_SESSION['id'])): ?>
-            <a href="deleteuser.php?id=<?= $row['UID']?>">Izbrisi osobu</a>
+            <a href="deleteuser.php?id=<?= $row['UID']?>">Izbriši osobu</a>
         <?php endif; ?>
-        <br><br><br>
+        <br><hr><br>
     <?php endwhile; ?>
 
 </div>

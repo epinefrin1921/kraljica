@@ -24,10 +24,12 @@ include ('../assets/includes/header.php');
 include ('../assets/includes/navbar.php');
 ?>
 
-<div class="wrappper dobrodoslica">
-    <h1> Dobrodosli, <?= $row['FNAME'] ?></h1>
+<div class="container py-5">
+    <h1> Dobrodošli, <?= $row['FNAME'] ?></h1>
+    <hr>
     <p>Upravljajte svojim biznisom</p>
 </div>
+
 
 <?php
 include ('../assets/includes/adminheader.php');
@@ -39,28 +41,28 @@ if(isset($_SESSION['msg'])){
 }
 ?>
 
-<div class="forma container">
+<div class="container py-5">
     <h3>Dodajte novi proizvod</h3>
     <form action="insertproduct.php" method="post" enctype="multipart/form-data">
         <div>
             <label for="name">Ime proizvoda</label>
-            <input type="text" name="name" id="name" required>
+            <input class="form-control my-2" type="text" name="name" id="name" required>
         </div>
         <div>
             <label for="cijena">Cijena</label>
-            <input type="number" name="cijena" id="cijena" required step="0.5">
+            <input class="form-control my-2" type="number" name="cijena" id="cijena" required step="0.5">
         </div>
         <div>
-            <label for="kolicina">Pocetna kolicina</label>
-            <input type="number" name="kolicina" id="kolicina" required step="1">
+            <label for="kolicina">Početna kolicina</label>
+            <input class="form-control my-2" type="number" name="kolicina" id="kolicina" required step="1">
         </div>
         <div>
             <label for="text">Opis</label>
-            <textarea name="text" id="text" required rows="10" cols="60">Kratki opis proizvoda</textarea>
+            <textarea class="form-control my-2" name="text" id="text" required rows="10" cols="60">Kratki opis proizvoda</textarea>
         </div>
         <div>
             <label for="kategorija">Kategorija</label>
-            <select name="kategorija" id="kategorija" required>
+            <select class="form-control my-2" name="kategorija" id="kategorija" required>
                 <option value="" selected disabled hidden>Odaberite kategoriju</option>
                 <option value="rakija">Rakija</option>
                 <option value="liker">Liker</option>
@@ -69,9 +71,9 @@ if(isset($_SESSION['msg'])){
             </select>
         </div>
         <label for="image">Slika:</label>
-        <input type="file" placeholder="Image" id="image" name="image" required>
+        <input class="form-control my-2" type="file" placeholder="Image" id="image" name="image" required>
 
-        <input type="submit" value="Ubaci u bazu">
+        <input type="submit" value="Ubaci u bazu" class="btn btn-dark">
     </form>
 
 </div>

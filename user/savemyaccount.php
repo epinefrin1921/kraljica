@@ -30,7 +30,7 @@ else{
                            where UID= ".$id);
 }
 
-$_SESSION['msg']='Account saved!';
+$_SESSION['msg']='Account sačuvan!';
 
 header("Location: myaccount.php");
 exit();

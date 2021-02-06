@@ -27,8 +27,9 @@ include ('../assets/includes/header.php');
 include ('../assets/includes/navbar.php');
 ?>
 
-<div class="wrappper dobrodoslica">
-    <h1> Dobrodosli, <?= $row['FNAME'] ?></h1>
+<div class="container py-5">
+    <h1> Dobrodošli, <?= $row['FNAME'] ?></h1>
+    <hr>
     <p>Upravljajte svojim biznisom</p>
 </div>
 
@@ -44,31 +45,28 @@ if(isset($_SESSION['msg'])){
 ?>
 
 
-<div class="wrappper izbrisani">
+<div class="container py-5">
     <h1>Aktiviraj izbrisane proizvode</h1>
-    <div class="opisProizvoda">
+
+    <div class="d-flex p-2 justify-content-between flex-wrap">
         <p>Naziv</p>
         <p>Cijena</p>
         <p>Opis</p>
-        <p>Uredi</p>
-
+        <p>Aktiviraj</p>
     </div>
 
     <?php while ($row=mysqli_fetch_assoc($query)): ?>
+        <div class="d-flex p-2 justify-content-between flex-wrap">
+            <p class="media-heading"><?= $row['NAME'] ?></p>
+            <p class="media-heading marka"><?= $row['PRICE'] ?>KM</p>
+            <p class="media-heading"><?= $row['DESCRIPTION'] ?></p>
 
-    <div class="opisProizvoda">
-        <h3 class="media-heading"><?= $row['NAME'] ?></h3>
-        <h3 class="media-heading marka"><?= $row['PRICE'] ?>KM</h3>
-        <h3 class="media-heading"><?= $row['DESCRIPTION'] ?></h3>
-
-        <div>
-            <?php if(isset($_SESSION['id'])): ?>
-                <a href="activateitem.php?id=<?= $row['PID'] ?>">Aktiviraj proizvod</a>
-            <?php endif; ?>
+            <div>
+                <?php if(isset($_SESSION['id'])): ?>
+                    <a href="activateitem.php?id=<?= $row['PID'] ?>">Aktiviraj proizvod</a>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-
-
     <?php endwhile; ?>
 </div>
 

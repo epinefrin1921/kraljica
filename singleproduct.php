@@ -33,38 +33,43 @@ include ('assets/includes/header.php');
 include ('assets/includes/navbar.php');
 ?>
 
-<div class="single">
-    <img src="images/<?= $Image ?>" class="img-responsive" alt="Food Menu">
-    <div class="singleInfo">
+<?php
+if(isset($_SESSION['msg'])){ ?>
+   <div class="container p-3">
+       <div class="alert alert-success" role="alert">
+           <?php echo $_SESSION['msg']; ?>
+       </div>
+   </div>
+<?php } ?>
+<div class="container d-flex p-2 py-5 justify-content-between flex-wrap">
+
+
+    <div class="col-12 col-md-5">
+        <img src="images/<?= $Image ?>" width="100%" alt="Product image">
+    </div>
+
+    <div class="col-12 col-md-6 mt-3 d-flex flex-column align-items-center">
         <h3 class="media-heading"><?= $Name ?></h3>
         <p><?= $Description ?></p>
-        <p>Na stanju: <?= $Quantity?></p>
-        <h3 class="media-heading marka"><?= $Price ?>KM</h3>
-        <form action="order/cart.php?id=<?= $ID ?>" method="post" style="width: 100%">
-            <input type="number" step="1" min="1" placeholder="Kolicina" id="quantity" name="quantity"  required max="<?= $row['QUANTITY']-$incart ?>" style="width: 40%">
-            <input class="btn btn-dark btn-sm" id="submit" type="submit" value="Dodaj">
-        </form>
-    </div>
-</div>
+        <p>Na stanju: <?= $Quantity?> - Cijena: <?= $Price ?>KM</p>
 
+        <p>Dodaj u korpu: </p>
+        <form action="order/cart.php?id=<?= $ID ?>" method="post" style="width: 60%">
+            <input type="number" step="1" min="1" placeholder="Kolicina" id="quantity" name="quantity"  required max="<?= $row['QUANTITY']-$incart ?>" class="form-control">
+            <input class="btn btn-dark btn-sm form-control mt-2" id="submit" type="submit" value="Dodaj">
+        </form>
 
         <?php if(isset($_SESSION['id'])): ?>
-            <a href="user/deleteproducts.php?id=<?= $ID ?>">Izbriši</a>
-            <a href="user/updateproducts.php?id=<?= $ID?>">Uredi</a>
-            <a href="user/addquantity.php?id=<?= $ID ?>">Dodaj novu kolicinu</a>
+        <div class="container d-flex p-2 py-5 justify-content-center">
+            <a class="p-2" href="user/deleteproducts.php?id=<?= $ID ?>">Izbriši</a>
+            <a class="p-2" href="user/updateproducts.php?id=<?= $ID?>">Uredi</a>
+            <a class="p-2" href="user/addquantity.php?id=<?= $ID ?>">Dodaj novu kolicinu</a>
+        </div>
         <?php endif; ?>
 
-
-
-
-    <div class="kontakt">
-        <div class="wrappper">
-            <h1>Imate pitanje?</h1>
-            <hr>
-            <p>Obratite nam se sa svim mogucim upitima</p>
-            <a href="kontakt.php">Kontaktirajte nas</a>
-        </div>
     </div>
+
+</div>
 
 
 

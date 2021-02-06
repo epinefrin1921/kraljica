@@ -33,34 +33,31 @@ include ('assets/includes/header.php');
 <?php
 include ('assets/includes/navbar.php');
 ?>
+<div class="container py-5">
 
+    <h1>Blog - <?= $Naslov ?></h1>
+    <hr>
+    <p>Postavljeno <?= $Datum ?> </p>
 
-<div class="blog">
-    <img class="img-responsive" src="images/blog/<?= $Image ?>" alt="">
-    <div class="blogInfo">
-        <p class="blog__single__date"><?= $Datum ?></p>
-        <a href="#"><h1 class="blog__single__title"><?= $Naslov ?></h1></a>
-        <p class="blog__single__paragraph"><?= $Tekst ?></p>
+    <div class="container">
+        <div class="container p-2 py-3 ">
+                <img src="images/blog/<?= $Image ?>" align="left" class="me-3 mb-3" width="30%" alt="Blog image">
+
+                <p style="text-align: justify">
+                    <?=  $Tekst ?>
+                </p>
+
+        </div>
     </div>
+
+
+    <?php if(isset($_SESSION['id'])): ?>
+        <a href="user/deleteblog.php?id=<?= $ID ?>">Izbriši</a>
+        <a href="user/updateblog.php?id=<?= $ID?>">Uredi</a>
+    <?php endif; ?>
+
 </div>
 
-
-<?php if(isset($_SESSION['id'])): ?>
-    <a href="user/deleteblog.php?id=<?= $ID ?>">Izbriši</a>
-    <a href="user/updateblog.php?id=<?= $ID?>">Uredi</a>
-<?php endif; ?>
-
-
-
-
-<div class="kontakt">
-    <div class="wrappper">
-        <h1>Imate pitanje?</h1>
-        <hr>
-        <p>Obratite nam se sa svim mogucim upitima</p>
-        <a href="kontakt.php">Kontaktirajte nas</a>
-    </div>
-</div>
 
 
 

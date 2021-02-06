@@ -15,7 +15,7 @@ if(!isset($_SESSION['id']) and !isset($_SESSION['vaucher'])){
 }
 
 unset($_SESSION['vaucher']);
-$title="Pojedinacna narudzba";
+$title="Kraljica - Pojedinačna narudžba";
 
 $query=mysqli_query($conn, 'select * from orders where OID='.$order);
 $query2=mysqli_query($conn, 'select * from order_line where OrderID='.$order);
@@ -32,11 +32,19 @@ include ('assets/includes/header.php');
 include ('assets/includes/navbar.php');
 ?>
 
-<div class="wrappper">
-    <div class="narudzbeStranica">
-        <h3>Informacije o klijentu:</h3>
+<div class="container py-5">
+    <div>
+        <h1>Vaša narudžba</h1>
+        <hr>
+        <p>Kontaktirajte nas ako imate neki upit</p>
 
-        <div class="informacijeNarudzba">
+    </div>
+
+
+    <div class="container py-5">
+        <h4>Opće informacije: </h4>
+
+        <div class="d-flex justify-content-between flex-wrap">
             <p>Klijent</p>
             <p>Adresa</p>
             <p>Datum</p>
@@ -44,31 +52,36 @@ include ('assets/includes/navbar.php');
             <p>Status</p>
         </div>
 
+        <hr>
+
         <?php while($row=mysqli_fetch_assoc($query)): ?>
-            <div class="narudzbeSve">
+            <div class="d-flex justify-content-between flex-wrap">
                 <p><?= $row['FNAME']." ".$row['LNAME'] ?></p>
                 <p><?= $row['Address']?> - <?= $row['City']?> </p>
                 <p><?= date( 'd.m.Y H:i:s',strtotime($row['OTIME']))?></p>
-                <p><?= $row['Total'] ?></p>
+                <p><?= $row['Total'] ?>KM</p>
                 <p><?= $row['Status']?></p>
             </div>
         <?php endwhile; ?>
-    </div>
-    <hr>
-    <div class="narudzbeStranica">
-        <h3>Informacije o proizvodima:</h3>
 
-        <div class="informacijeNarudzba">
-            <h3>Naziv</h3>
-            <h3>Kolicina</h3>
-            <h3>Cijena</h3>
+        <hr>
+
+
+        <h3 class="py-5">Informacije o proizvodima:</h3>
+
+        <div class="d-flex justify-content-between flex-wrap">
+            <p>Naziv</p>
+            <p>Kolicina</p>
+            <p>Cijena</p>
         </div>
+
+        <hr>
 
         <?php
         $total=0;
         ?>
         <?php while($row2=mysqli_fetch_assoc($query2)): ?>
-            <div class="naslovorder">
+            <div class="d-flex  justify-content-between flex-wrap">
                 <?php
                 $query3 = mysqli_query($conn, "select * from products where PID ='{$row2['ItemID']}'");
                 $row3= mysqli_fetch_assoc($query3);
@@ -76,35 +89,17 @@ include ('assets/includes/navbar.php');
                 $total_price+=$row2['Price']*$row2['Quantity'];
                 $total+=$total_price;
                 ?>
-                <div class="narudzbeSve">
                 <p><?= $row3['NAME'] ?></p>
                 <p><?= $row2['Quantity'] ?> kom</p>
                 <p><?= $total_price ?>KM</p>
-                </div>
-
             </div>
         <?php endwhile; ?>
-        <div class="total">
+        <div class="container py-5">
             <h3>Ukupno:  <?= $total?> KM</h3>
         </div>
     </div>
 
 </div>
-
-
-
-
-<div class="kontakt">
-    <div class="wrappper">
-        <h1>Imate pitanje?</h1>
-        <hr>
-        <p>Obratite nam se sa svim mogucim upitima</p>
-        <a href="kontakt.php">Kontaktirajte nas</a>
-    </div>
-</div>
-
-
-
 
     <?php
     include ('assets/includes/footer.php');

@@ -10,6 +10,8 @@ if (count($_SESSION['products']) == 1) {
     $_SESSION['products'] = [];
     unset($_SESSION['total']);
     header('Location: ../cart.php');
+    $_SESSION['msg']='Proizvod izbrisan iz korpe!';
+
     exit();
 }
 
@@ -20,7 +22,9 @@ foreach ($_SESSION['products'] as $index => $item) {
         $row = mysqli_fetch_assoc($query);
         $price = $row['PRICE'];
         $_SESSION['total'] -= $price * $item[1];
+        $_SESSION['msg']='Proizvod izbrisan iz korpe!';
         unset($_SESSION['products'][$index]);
     }
 }
+
 header('Location: ../cart.php');
