@@ -9,5 +9,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.6.0/js/all.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
           integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/gif" sizes="16x16">
     <title><?= $title ?></title>
+
 </head>

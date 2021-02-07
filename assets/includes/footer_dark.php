@@ -22,12 +22,12 @@
             <h5>Profili</h5>
             <ul class="list-unstyled text-small">
                 <?php if(!isset($_SESSION['id'])) :?>
-                    <li>  <a class="link-secondary text-light" href="/kraljica/user/login.php">Login</a></li>
-                    <li>  <a class="link-secondary text-light" href="/kraljica/checkorder.php">Prati status</a> </li>
+                    <li>  <a class="link-secondary text-light" href="/user/login.php">Login</a></li>
+                    <li>  <a class="link-secondary text-light" href="/checkorder.php">Prati status</a> </li>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['id'])) :?>
-                    <li> <p><a class="link-secondary text-light" href="/kraljica/user/logout.php">Logout</a></p> </li>
-                    <li>  <p><a class="link-secondary text-light" href="/kraljica/user/myaccount.php">My account</a></p> </li>
+                    <li> <p><a class="link-secondary text-light" href="/user/logout.php">Logout</a></p> </li>
+                    <li>  <p><a class="link-secondary text-light" href="/user/myaccount.php">My account</a></p> </li>
                 <?php endif; ?>
             </ul>
         </div>

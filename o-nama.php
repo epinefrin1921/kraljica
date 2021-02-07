@@ -36,11 +36,24 @@ include ('assets/includes/navbar.php');
                 <img src="assets/images/SK_Prezentacija-2-11.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="assets/images/SK_Prezentacija-2-11.png" class="d-block w-100" alt="...">
+                <img src="assets/images/logo.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="assets/images/SK_Prezentacija-2-11.png" class="d-block w-100" alt="...">
+                <img src="assets/images/2%20(1).jpg" class="d-block w-100" alt="...">
             </div>
+            <div class="carousel-item">
+                <img src="assets/images/malinica.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/malinovaca.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/medovaca.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/medica.jpg" class="d-block w-100" alt="...">
+            </div>
+
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

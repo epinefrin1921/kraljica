@@ -49,13 +49,21 @@ if(isset($_SESSION['msg'])){ ?>
     </div>
 
     <div class="col-12 col-md-6 mt-3 d-flex flex-column align-items-center">
+        <?php
+        $incart=0;
+        if (isset($_SESSION['products'])){
+            foreach($_SESSION['products'] as $index=>$item){
+                if($item[0]==$ID){
+                    $incart=$item[1];
+                }}};
+        ?>
         <h3 class="media-heading"><?= $Name ?></h3>
         <p><?= $Description ?></p>
-        <p>Na stanju: <?= $Quantity?> - Cijena: <?= $Price ?>KM</p>
+        <p>Na stanju: <?= $Quantity-$incart ?> - Cijena: <?= $Price ?>KM</p>
 
         <p>Dodaj u korpu: </p>
         <form action="order/cart.php?id=<?= $ID ?>" method="post" style="width: 60%">
-            <input type="number" step="1" min="1" placeholder="Kolicina" id="quantity" name="quantity"  required max="<?= $row['QUANTITY']-$incart ?>" class="form-control">
+            <input type="number" step="1" min="1" placeholder="Kolicina" id="quantity" name="quantity"  required max="<?= $Quantity-$incart ?>" class="form-control">
             <input class="btn btn-dark btn-sm form-control mt-2" id="submit" type="submit" value="Dodaj">
         </form>
 
